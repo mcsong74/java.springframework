@@ -18,6 +18,7 @@ import org.springframework.util.StringValueResolver;
 import java.beans.PropertyEditor;
 import java.lang.annotation.Annotation;
 import java.security.AccessControlContext;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
@@ -43,6 +44,9 @@ public class CybertekApp {
         staff.createAccount();
         staff=container.getBean("partTimeStaff", Staff.class);
         staff.createAccount();
+
+        Arrays.stream(container.getBeanNamesForType(Staff.class)).forEach(b->System.out.println("name= "+b));
+        Arrays.stream(container.getBeanNamesForType(Mentor.class)).forEach(b->System.out.println(b.toString()));
 
 
     }

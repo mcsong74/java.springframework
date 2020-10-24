@@ -7,7 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AppRunner {
     public static void main(String[] args) {
         ApplicationContext container= new ClassPathXmlApplicationContext("config.xml");
-        Course course=container.getBean("Java", Course.class);
+        Course course=container.getBean("java", Course.class);
         course.getTeachingHours();
+
     }
 }

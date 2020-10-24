@@ -7,15 +7,25 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Java implements Course {
-
+    //field injection
+    @Autowired
     private OfficeHours officeHours; //create composition
 
-    //Constructor injection using @Autowired
-    @Autowired  //inject constructor to Java Component
-    public Java(OfficeHours officeHours) {
-        // autowired constructor
-        this.officeHours = officeHours;
-    }
+//    //Constructor injection using @Autowired
+//    @Autowired  //inject constructor to Java Component
+//    public Java(OfficeHours officeHours) {
+//        // autowired constructor
+//        this.officeHours = officeHours;
+//    }
+
+//    // Setter Injection, no commonly used.  common use is Constructor inject than setter injection
+//    public OfficeHours getOfficeHours() {
+//        return officeHours;
+//    }
+//    @Autowired
+//    public void setOfficeHours(OfficeHours officeHours) {
+//        this.officeHours = officeHours;
+//    }
 
     @Override
     public void getTeachingHours() {

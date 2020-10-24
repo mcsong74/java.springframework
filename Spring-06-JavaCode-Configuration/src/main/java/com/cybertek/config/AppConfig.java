@@ -6,10 +6,13 @@ import com.cybertek.services.OfficeHours;
 import com.cybertek.services.Selenium;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
 @ComponentScan("com.cybertek") //will scan all packages under com.cybertek
+@PropertySource("classpath:application.properties") // Value
 public class AppConfig {
 
     @Bean

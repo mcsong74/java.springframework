@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-02-DI-SetterInjection/Spring-02-DI-SetterInjection.iml" filepath="$PROJECT_DIR$/Spring-02-DI-SetterInjection/Spring-02-DI-SetterInjection.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-03-BeanScope-Singleton-Prototype/Spring-03-BeanScope-Singleton-Prototype.iml" filepath="$PROJECT_DIR$/Spring-03-BeanScope-Singleton-Prototype/Spring-03-BeanScope-Singleton-Prototype.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-04-BeanLifeCycle-InitAndDestroyMethod/Spring-04-BeanLifeCycle-InitAndDestroyMethod.iml" filepath="$PROJECT_DIR$/Spring-04-BeanLifeCycle-InitAndDestroyMethod/Spring-04-BeanLifeCycle-InitAndDestroyMethod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-05-JavaAnnotations-Component/Spring-05-JavaAnnotations-Component.iml" filepath="$PROJECT_DIR$/Spring-05-JavaAnnotations-Component/Spring-05-JavaAnnotations-Component.iml" />
     </modules>
   </component>
 </project>

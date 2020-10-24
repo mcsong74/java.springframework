@@ -10,5 +10,7 @@ public class AppRunner {
         Course course=container.getBean("java", Course.class);
         course.getTeachingHours();
 
+        Course course1=container.getBean("API", Course.class);
+        course1.getTeachingHours();
     }
 }

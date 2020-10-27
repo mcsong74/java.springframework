@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
 
     @Bean
+//    @Scope("prototype")
     public Java java(){ //3rd party class, can inject this way
 //        return new Java(officeHours());
         return new Java(extraSessions());

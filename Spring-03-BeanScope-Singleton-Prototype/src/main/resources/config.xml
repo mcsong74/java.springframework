@@ -5,7 +5,7 @@
         https://www.springframework.org/schema/beans/spring-beans.xsd">
 <!--    <bean id="java" class="com.Java"></bean>-->
 <!--    <bean id="java" class="com.Java" scope="singleton"></bean> &lt;!&ndash; singleton &ndash;&gt;-->
-    <bean id="java" class="com.cybertek.services.Java" scope="prototype"></bean> <!-- Prototype -->
+    <bean id="java" class="com.cybertek.interfaces.services.Java" scope="prototype"></bean> <!-- Prototype -->
 
-    <bean id="selenium" class="com.cybertek.services.Selenium"></bean>
+    <bean id="selenium" class="com.cybertek.interfaces.services.Selenium"></bean>
 </beans>

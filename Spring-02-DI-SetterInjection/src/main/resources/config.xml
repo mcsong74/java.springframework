@@ -9,5 +9,5 @@
     </bean>
 
     <bean id="selenium" class="com.Selenium"></bean>
-    <bean id="officeHours" class="com.cybertek.services.OfficeHours"></bean>
+    <bean id="officeHours" class="com.cybertek.interfaces.services.OfficeHours"></bean>
 </beans>

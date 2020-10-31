@@ -2,12 +2,14 @@ package com.cybertek.services.carpet;
 
 import com.cybertek.enums.City;
 import com.cybertek.interfaces.carpetPrice.Carpet;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@Component
 public class CarpetVA implements Carpet {
     private static final Map<City, BigDecimal> sqPriceForCity= new HashMap<>();
     static{

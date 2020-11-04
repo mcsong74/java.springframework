@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 @Component
 public class Calculator {
@@ -25,8 +26,8 @@ public class Calculator {
         if (cost.compareTo(BigDecimal.ZERO)==0){
             throw new Exception ("This city does not exist");
         }
-
-        return "Total cost for Carpet : "+cost.doubleValue();
+        DecimalFormat dollar =new DecimalFormat("#,###.00");
+        return "Total cost for Carpet : "+ dollar.format(cost.doubleValue());
     }
 
 

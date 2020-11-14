@@ -21,9 +21,16 @@
     <h3 th:text="${student.id+': '+student.lastName+', '+student.firstName}"></h3>
 <!--ThymeLeaf Link-->
     <a th:href="@{https://cybertekschool.com}">Cybertek</a>
-    <a th:href="@{https://www.google.com}">Google</a>
-
-
-
+    <a th:href="@{https://www.google.com}">Google</a><br>
+    <a th:href="@{/student/register}">Student Registration</a><br><br>
+<!--ThymeLeaf dding Parameters to Link-->
+    <a th:href="@{/student/welcome(id=3)}">Link2</a>
+    <a th:href="@{/student/welcome(id=${student.id})}">Link3</a>
+<!--ThymeLeaf Iteration-->
+    <ul>
+<!--        numbers collection is from StudentController which is 4,5,6,7-->
+        <li th:each="number : ${numbers}" th:text="${number}"></li>
+        
+    </ul>
 </body>
 </html>

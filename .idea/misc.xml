@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/Spring-07-SpringBoot-Demo/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-07-SpringBoot-IoC-DI-Lab/pom.xml" />
         <option value="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Controller/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-08-SpringBoot-MVC-Model-View-Thymeleaf/pom.xml" />
       </list>
     </option>
   </component>

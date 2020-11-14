@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>Welcome to Spring Class - student/welcome page</h2>
+<!--    ThymeLeaf text-->
+    <div th:text="${name}"></div>
+    <h3 th:text="${school}"></h3>
+    <div th:text="'Course name = '+${course}"></div>
+    <div th:text="'subject = '+${subject}"></div>
+    <h3 th:text="'Student ID = '+${studentid}"></h3>
+    <h3>List - object in Attributes</h3>
+    <div th:text="${'List contains = '+numbers}"></div>
+    <div th:text="${numbers.get(0)}"></div>
+    <h3>Date - birthday</h3>
+    <div th:text="'Birthday = '+${birthday}"></div>
+    <h3 th:text="${student.getId()+': '+student.getFirstName()+' '+student.getLastName()}"></h3>
+    <h3 th:text="${student.id+': '+student.lastName+', '+student.firstName}"></h3>
+<!--ThymeLeaf Link-->
+    <a th:href="@{https://cybertekschool.com}">Cybertek</a>
+    <a th:href="@{https://www.google.com}">Google</a>
+
+
+
+</body>
+</html>

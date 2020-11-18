@@ -4,6 +4,7 @@ import com.cybertek.model.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Arrays;
@@ -23,5 +24,9 @@ public class MentorController {
         return "/mentor/mentor-register"; //return to html page 'mentor-register' html file
     }
 
+    @PostMapping("/confirm")
+    public String submitForm(Model model){
+        return "/mentor/mentor-confirmation";
+    }
 
 }

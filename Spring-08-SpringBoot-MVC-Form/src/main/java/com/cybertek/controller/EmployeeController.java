@@ -24,7 +24,7 @@ public class EmployeeController {
     }
 
     @PostMapping("/list")
-    public String employeeList(@ModelAttribute("employee") Employee employee, Model model){
+    public String employeeList( Employee employee, Model model){
         model.addAttribute("employeeList", Arrays.asList(employee));
         model.addAttribute("age", LocalDate.now().getYear()-LocalDate.parse(employee.getBirthday()).getYear());
         return "/employee/employee-list";

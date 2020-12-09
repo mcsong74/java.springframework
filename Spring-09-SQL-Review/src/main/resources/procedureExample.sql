@@ -14,3 +14,64 @@ $$;
 call update_department(1);
 
 select * from employees where employee_id=1;
+
+
+Create OR REPLACE PROCEDURE transfer(
+    sender int,
+    receiver int,
+    amount dec
+)
+    language plpgsql
+as
+$$
+declare
+begin
+    update  employees
+    set salary=salary-amount
+    where employee_id=sender;
+
+    update employees
+    set salary=salary+amount
+    where employee_id=receiver;
+end
+$$;
+
+call transfer(1, 2, 44000);
+
+select * from employees order by employee_id;
+
+
+Create OR REPLACE PROCEDURE transfer(
+    sender int,
+    receiver int,
+    amount dec
+)
+    language plpgsql
+as
+$$
+declare
+begin
+    update  employees
+    set salary=salary-amount
+    where employee_id=sender;
+
+    update employees
+    set salary=salary+amount
+    where employee_id=receiver;
+end
+$$;
+
+call transfer(1, 2, 44000);
+
+select * from employees order by employee_id;
+
+
+
+
+
+
+
+
+
+
+

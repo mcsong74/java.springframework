@@ -19,7 +19,7 @@ public class ComApplication {
 		SpringApplication.run(ComApplication.class, args);
 	}
 
-	@PostConstruct //always pre-execute when it run
+	@PostConstruct //always pre-execute before operations when it run
 	public void dataInit(){
 		Car c1=new Car(2010, "BMW", "M5");
 		Car c2=new Car(2020, "Mercedes Benz", "SLK");

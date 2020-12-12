@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class ComApplication {
@@ -17,7 +19,7 @@ public class ComApplication {
 		SpringApplication.run(ComApplication.class, args);
 	}
 
-	@PostConstruct
+	@PostConstruct //always pre-execute when it run
 	public void dataInit(){
 		Car c1=new Car(2010, "BMW", "M5");
 		Car c2=new Car(2020, "Mercedes Benz", "SLK");
@@ -27,6 +29,14 @@ public class ComApplication {
 		carRepository.save(c2);
 		carRepository.save(c3);
 		carRepository.save(c4);
+
+		List<Car> cars=new ArrayList<>();
+		cars.add(new Car(2017, "Hyundai", "Genesis"));
+		cars.add(new Car(2019, "Hyundai", "Genesis"));
+		cars.add(new Car(2020, "Kia", "Sportage"));
+		cars.add(new Car(2019, "Ford", "Mustang"));
+		carRepository.saveAll(cars);
+
 	}
 
 }

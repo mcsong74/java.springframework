@@ -1,11 +1,11 @@
-package com.orm2.bootstrap;
+package com.cybertek.bootstrap;
 
-import com.orm2.entity.Department;
-import com.orm2.entity.Employee;
-import com.orm2.entity.Region;
-import com.orm2.enums.Gender;
-import com.orm2.repository.DepartmentRepository;
-import com.orm2.repository.EmployeeRepository;
+
+import com.cybertek.entity.Department;
+import com.cybertek.entity.Employee;
+import com.cybertek.entity.Region;
+import com.cybertek.enums.Gender;
+import com.cybertek.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -20,7 +20,7 @@ public class DataGenerator implements CommandLineRunner {
 
 //    DepartmentRepository departmentRepository;//when join, Hibernate will do it, so no need this statement
     @Autowired
-    EmployeeRepository employeeRepository;
+EmployeeRepository employeeRepository;
 
 //    public DataGenerator(DepartmentRepository departmentRepository, EmployeeRepository employeeRepository) {
 //        this.departmentRepository = departmentRepository;
@@ -51,10 +51,10 @@ public class DataGenerator implements CommandLineRunner {
         Department d5 = new Department("Computers","Electronics");
 
         e1.setDepartment(d1);
-        e2.setDepartment(d2);
-        e3.setDepartment(d3);
+        e2.setDepartment(d1);
+        e3.setDepartment(d2);
         e4.setDepartment(d4);
-        e5.setDepartment(d5);
+        e5.setDepartment(d2);
 
         Region r1= new Region("Southwest", "United States");
         Region r2= new Region("Northeast", "United States");
@@ -65,16 +65,17 @@ public class DataGenerator implements CommandLineRunner {
 //        Region r7= new Region("Nova Scotia", "Canada");
 
         e1.setRegion(r1);
-        e2.setRegion(r2);
+        e2.setRegion(r1);
         e3.setRegion(r3);
         e4.setRegion(r4);
-        e5.setRegion(r5);
+        e5.setRegion(r3);
 
         employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
 //        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5)); //relation ship will handle this
-
         employeeRepository.saveAll(employeeList);
 //        departmentRepository.saveAll(departmentList); //when join, Hibernate will do this action
+        employeeRepository.deleteById(1);
+
     }
 
 

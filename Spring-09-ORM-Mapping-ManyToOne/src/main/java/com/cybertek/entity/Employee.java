@@ -1,7 +1,6 @@
-package com.orm2.entity;
+package com.cybertek.entity;
 
-import com.orm2.enums.Gender;
-import lombok.AllArgsConstructor;
+import com.cybertek.enums.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,11 +28,12 @@ public class Employee extends BaseEntity{
     private int  salary;
 
     //    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST})
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY) //ManyToOne relation
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST}, fetch = FetchType.LAZY) //ManyToOne relation
     @JoinColumn(name="departmentId")
     private Department department;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name="regionId")
     private Region region;
 

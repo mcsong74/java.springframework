@@ -1,7 +1,6 @@
-package com.orm2.entity;
+package com.cybertek.entity;
 
-import com.orm2.enums.Gender;
-import lombok.AllArgsConstructor;
+import com.cybertek.enums.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

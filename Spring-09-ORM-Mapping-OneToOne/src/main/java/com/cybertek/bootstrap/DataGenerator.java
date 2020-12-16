@@ -1,11 +1,10 @@
-package com.orm2.bootstrap;
+package com.cybertek.bootstrap;
 
-import com.orm2.entity.Department;
-import com.orm2.entity.Employee;
-import com.orm2.entity.Region;
-import com.orm2.enums.Gender;
-import com.orm2.repository.DepartmentRepository;
-import com.orm2.repository.EmployeeRepository;
+import com.cybertek.entity.Department;
+import com.cybertek.entity.Employee;
+import com.cybertek.entity.Region;
+import com.cybertek.enums.Gender;
+import com.cybertek.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

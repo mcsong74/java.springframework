@@ -1,4 +1,4 @@
-package com.orm2.enums;
+package com.cybertek.enums;
 
 public enum Gender {
     M, F;

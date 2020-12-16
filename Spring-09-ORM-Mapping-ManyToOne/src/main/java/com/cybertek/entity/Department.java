@@ -24,3 +24,7 @@ public class Department extends BaseEntity{
         this.division = division;
     }
 }
+
+
+
+

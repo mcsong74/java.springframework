@@ -1,6 +1,6 @@
-package com.orm2.repository;
+package com.cybertek.repository;
 
-import com.orm2.entity.Employee;
+import com.cybertek.entity.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

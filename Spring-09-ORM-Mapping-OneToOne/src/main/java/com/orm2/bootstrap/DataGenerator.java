@@ -71,7 +71,7 @@ public class DataGenerator implements CommandLineRunner {
         e5.setRegion(r5);
 
         employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
-        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));
+//        departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5)); //relation ship will handle this
 
         employeeRepository.saveAll(employeeList);
 //        departmentRepository.saveAll(departmentList); //when join, Hibernate will do this action

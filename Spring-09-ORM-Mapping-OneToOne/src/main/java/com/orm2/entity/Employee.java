@@ -12,10 +12,9 @@ import java.time.LocalDate;
 @Entity
 @Setter
 @Getter
-@Table(name="employees")
 @NoArgsConstructor
+@Table(name="employees")
 public class Employee extends BaseEntity{
-
 
     private String firstName;
     private String lastName;

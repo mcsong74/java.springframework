@@ -2,6 +2,7 @@ package com.orm2.bootstrap;
 
 import com.orm2.entity.Department;
 import com.orm2.entity.Employee;
+import com.orm2.entity.Region;
 import com.orm2.enums.Gender;
 import com.orm2.repository.DepartmentRepository;
 import com.orm2.repository.EmployeeRepository;
@@ -54,6 +55,20 @@ public class DataGenerator implements CommandLineRunner {
         e3.setDepartment(d3);
         e4.setDepartment(d4);
         e5.setDepartment(d5);
+
+        Region r1= new Region("Southwest", "United States");
+        Region r2= new Region("Northeast", "United States");
+        Region r3= new Region("Northwest", "United States");
+        Region r4= new Region("Central", "Asia");
+        Region r5= new Region("East Asia", "Asia");
+        Region r6= new Region("Quebec", "Canada");
+        Region r7= new Region("Nova Scotia", "Canada");
+
+        e1.setRegion(r1);
+        e2.setRegion(r2);
+        e3.setRegion(r3);
+        e4.setRegion(r4);
+        e5.setRegion(r5);
 
         employeeList.addAll(Arrays.asList(e1,e2,e3,e4,e5));
         departmentList.addAll(Arrays.asList(d1,d2,d3,d4,d5));

@@ -29,6 +29,10 @@ public class Employee extends BaseEntity{
 
     private int  salary;
 
+    //    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.DETACH, CascadeType.PERSIST})
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="departmentId")
+    private Department department;
 
     public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {
         this.firstName = firstName;

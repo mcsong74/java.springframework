@@ -12,9 +12,9 @@ import java.time.LocalDate;
 @Entity
 @Setter
 @Getter
-@Table(name="employee")
+@Table(name="employees")
 @NoArgsConstructor
-public class Employees extends BaseEntity{
+public class Employee extends BaseEntity{
 
 
     private String firstName;
@@ -30,7 +30,7 @@ public class Employees extends BaseEntity{
     private int  salary;
 
 
-    public Employees(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {
+    public Employee(String firstName, String lastName, String email, LocalDate hireDate, Gender gender, int salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

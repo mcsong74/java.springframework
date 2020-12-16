@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Entity
 @Setter
 @Getter
-@Table(name="employees")
+@Table(name="employee")
 @NoArgsConstructor
 public class Employees extends BaseEntity{
 

@@ -12,18 +12,10 @@ import java.util.List;
 
 @SpringBootApplication
 public class OrmmappingApplication {
-	@Autowired
-	DepartmentRepository departmentRepository;
-	@Autowired
-	EmployeeRepository employeeRepository;
+
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrmmappingApplication.class, args);
 	}
 
-	@PostConstruct //always pre-execute before operations when it run
-	public void dataInit(){
-
-
-	}
 }

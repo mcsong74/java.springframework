@@ -32,7 +32,8 @@ public class Employee extends BaseEntity{
     @JoinColumn(name="departmentId")
     private Department department;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL) //Hibernate create a new column in Employee table. cascade - make persist
+    // one table to the other table
     @JoinColumn(name="regionId")
     private Region region;
 

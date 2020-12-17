@@ -19,7 +19,8 @@ public class Address {
     private String street;
     private String zipCode;
 
-    @ManyToOne // looks bi-directional but actually create 2 uni directional, not a good design
+    @ManyToOne // looks bi-directional but actually create 2 uni directional, not a good
+    // design
     //cannot use mappedBy here
     private Person person; //many address can be assigned to one person
 

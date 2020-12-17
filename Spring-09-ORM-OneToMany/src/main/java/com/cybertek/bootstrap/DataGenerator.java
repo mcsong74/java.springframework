@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
+
 @Component
 public class DataGenerator implements CommandLineRunner {
     @Autowired
@@ -21,7 +23,7 @@ public class DataGenerator implements CommandLineRunner {
         Address a2= new Address("234 Elm St", "52543");
         Address a3= new Address("542 Java St", "22414");
 
-
-
+        p1.setAddresses(Arrays.asList(a1,a2));
+        personRepository.save(p1);
     }
 }

@@ -20,13 +20,13 @@ public class Person {
     private String firstName;
     private String lastName;
 
-//    @OneToMany(mappedBy = "person") //mappedBy drop the ownership, and do not create additional table
-//    //this is how to use OneToMany which do not create additional table, preferred way
-//    private List<Address>  addresses; //one to many relations, one person may have multiple addresses
+    @OneToMany(mappedBy = "person", cascade = CascadeType.ALL) //mappedBy drop the ownership, and do not create additional table
+    //this is how to use OneToMany which do not create additional table, preferred way
+    private List<Address>  addresses; //one to many relations, one person may have multiple addresses
 
-    @OneToMany
-    @JoinColumn(name="personId") //not a good way
-    private List<Address> addresses;
+//    @OneToMany(casacade=CasacadeType.ALL)
+//    @JoinColumn(name="personId") //not a good way
+//    private List<Address> addresses;
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;

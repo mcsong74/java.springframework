@@ -22,7 +22,7 @@ public class Post {
     private String title;
     private String description;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinTable(name="post_tag_rel",
             joinColumns = {@JoinColumn(name="postId")},
             inverseJoinColumns = {@JoinColumn(name="tagId")})

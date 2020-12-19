@@ -30,7 +30,7 @@ public class Account extends BaseEntity{
     private User user;
 
     public Account(String name, String address, String country, String city, String state,
-                   String age, Integer postalCode, UserRole role) {
+                   String age, String postalCode, UserRole role) {
         this.name = name;
         this.address = address;
         this.country = country;

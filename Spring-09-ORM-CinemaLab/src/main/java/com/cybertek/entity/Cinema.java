@@ -12,4 +12,13 @@ import javax.persistence.Entity;
 @Setter
 public class Cinema extends BaseEntity{
 
+    private String name;
+    private String sponsoredName;
+
+
+
+    public Cinema(String name, String sponsoredName) {
+        this.name = name;
+        this.sponsoredName = sponsoredName;
+    }
 }

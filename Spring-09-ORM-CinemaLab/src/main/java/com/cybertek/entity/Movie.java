@@ -39,7 +39,7 @@ public class Movie extends BaseEntity{
             joinColumns = @JoinColumn(name="movie_id"), inverseJoinColumns = @JoinColumn(name="genre_id"))
     private List<Genre> genreList = new ArrayList<>(); //Set will be better, but for this lab using List
 
-    public Movie(String name, LocalDate releaseDate, Integer duration, String summary,
+    public Movie(String name, LocalDate releaseDate, Integer duration,
                  MovieType type, MovieState state, BigDecimal price) {
         this.name = name;
         this.releaseDate = releaseDate;

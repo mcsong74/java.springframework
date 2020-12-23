@@ -25,7 +25,6 @@ public class DerivedqueriesApplication {
 	public void testRegions(){
 
 		System.out.println("------------------Region Starts -----------------------");
-		System.out.println("");
 		System.out.println("FindByCountry: " + regionRepository.findByCountry("Canada"));
 		System.out.println("FindRigionsByCountry: "+regionRepository.findRegionsByCountry("Canada"));
 		System.out.println("FindAllByCountry: "+regionRepository.findAllByCountry("Canada"));
@@ -36,10 +35,8 @@ public class DerivedqueriesApplication {
 		System.out.println("FindAllByCountryContainingOrderByCountry: "+regionRepository.findAllByCountryContainsOrderByCountry("Asia"));
 		System.out.println("FindTopBy2ByCountry: "+regionRepository.findTop2ByCountry("Canada"));
 		System.out.println("------------------Region Ends -----------------------");
-		System.out.println("");
 
 		System.out.println("------------------Department Starts -----------------------");
-		System.out.println("");
 		System.out.println("findAllByDepartment : "+departmentRepository.findAllByDepartment("Furniture"));
 		System.out.println("findAllByDivision : "+departmentRepository.findAllByDivision("Health"));
 		System.out.println("findByDivisionIs : "+departmentRepository.findByDivisionIs("Health"));
@@ -48,11 +45,9 @@ public class DerivedqueriesApplication {
 		System.out.println("findByDivisionEndingWith : "+departmentRepository.findByDivisionEndingWith("ics"));
 		System.out.println("findDistinctByDivisionContaining : "+departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
 		System.out.println("------------------Department Ends -----------------------");
-		System.out.println("");
 
 		System.out.println("------------------Employee Starts -----------------------");
-		System.out.println("");
+
 		System.out.println("------------------Employee Ends -----------------------");
-		System.out.println("");
 	}
 }

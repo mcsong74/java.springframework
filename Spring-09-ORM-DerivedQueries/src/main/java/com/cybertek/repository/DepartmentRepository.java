@@ -11,6 +11,7 @@ import java.util.List;
 public interface DepartmentRepository extends JpaRepository<Department, String> {
     //Display All departments in the funrniture department
     List<Department> findAllByDepartment(String department);
+
     //Display all departments in the health devision
     List<Department> findAllByDivision(String division);
     List<Department> findByDivisionIs(String division);

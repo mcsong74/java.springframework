@@ -37,6 +37,7 @@ public class DerivedqueriesApplication {
 		System.out.println("FindTopBy2ByCountry: "+regionRepository.findTop2ByCountry("Canada"));
 		System.out.println("------------------Region Ends -----------------------");
 		System.out.println("");
+
 		System.out.println("------------------Department Starts -----------------------");
 		System.out.println("");
 		System.out.println("findAllByDepartment : "+departmentRepository.findAllByDepartment("Furniture"));
@@ -46,10 +47,9 @@ public class DerivedqueriesApplication {
 		System.out.println("findByDivisionEndsWith : "+departmentRepository.findByDivisionEndsWith("ics"));
 		System.out.println("findByDivisionEndingWith : "+departmentRepository.findByDivisionEndingWith("ics"));
 		System.out.println("findDistinctByDivisionContaining : "+departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
-
-
 		System.out.println("------------------Department Ends -----------------------");
 		System.out.println("");
+
 		System.out.println("------------------Employee Starts -----------------------");
 		System.out.println("");
 		System.out.println("------------------Employee Ends -----------------------");

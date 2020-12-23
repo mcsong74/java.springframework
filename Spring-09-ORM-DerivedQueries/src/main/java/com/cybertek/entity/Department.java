@@ -15,7 +15,6 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @ToString
-
 public class Department {
 
     @Id

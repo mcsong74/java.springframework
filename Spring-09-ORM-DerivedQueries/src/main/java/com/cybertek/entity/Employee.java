@@ -16,7 +16,6 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-
 public class Employee extends BaseEntity{
 //    @Id
 //    private Long id;
@@ -30,7 +29,7 @@ public class Employee extends BaseEntity{
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
-    private BigDecimal salary;
+    private Integer salary;
 
     @ManyToOne  //no need cascade because department will be entered in the database
     @JoinColumn(name="department")

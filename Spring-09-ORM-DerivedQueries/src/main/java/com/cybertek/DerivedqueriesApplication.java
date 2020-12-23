@@ -47,6 +47,12 @@ public class DerivedqueriesApplication {
 		System.out.println("------------------Department Ends -----------------------");
 
 		System.out.println("------------------Employee Starts -----------------------");
+//		System.out.println("findByEmail : "+employeeRepository.findByEmail(""));
+//		System.out.println("findAllByFirstNameIsAnAndLastNameIsOrEmailIs : "+employeeRepository.findAllByFirstNameIsAnAndLastNameIsOrEmailIs("", "", ""));
+//		System.out.println("findByFirstNameAndLastNameOrEmail : "+employeeRepository.findByFirstNameAndLastNameOrEmail("", "",""));
+//		System.out.println("findByFirstNameIsNot : "+employeeRepository.findByFirstNameIsNot("Avrom"));
+//		System.out.println("findByLastNameStartsWith : "+employeeRepository.findByLastNameStartsWith(""));
+		System.out.println("findBySalaryGreaterThan : "+employeeRepository.findBySalaryGreaterThan(100000));
 
 		System.out.println("------------------Employee Ends -----------------------");
 	}

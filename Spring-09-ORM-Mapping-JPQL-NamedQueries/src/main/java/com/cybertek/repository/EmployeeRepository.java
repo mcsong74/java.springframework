@@ -33,6 +33,19 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     @Query("select e from Employee e where e.firstName=:firstname or e.salary=:salary")
     List<Employee> getEmployeeByFirstNameOrSalary(@Param("firstname") String firstname, @Param("salary") int salary);
 
+    //Not equal
+    @Query("select e from Employee e where e.salary <> :salary")
+    List<Employee> getEmployeeBySalaryNotEqual(@Param("salary") int salary);
+
+    //Like/contains/starts with/ends with
+    @Query("select e from Employee e where e.firstName like ?1")
+    List<Employee> getEmployeeByFirstNameLike(String pattern);
+    //Less than
+    @Query("select e from Employee e where e.salary < ?1")
+    List<Employee> getEmployeeBySalaryLessThan(int salary);
+    //Greater than
+    @Query("select e from Employee e where e.salary > ?1")
+    List<Employee> getEmployeeBySalaryGreaterThan(int salary);
 
 
 

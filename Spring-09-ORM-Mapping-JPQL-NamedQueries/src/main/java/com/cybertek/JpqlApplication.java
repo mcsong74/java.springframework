@@ -1,5 +1,6 @@
 package com.cybertek;
 
+import com.cybertek.entity.Department;
 import com.cybertek.repository.DepartmentRepository;
 import com.cybertek.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,15 +28,22 @@ public class JpqlApplication {
 		System.out.println("employeeRepository.getEmployeeSalary() = "
 				+ employeeRepository.getEmployeeSalary());
 
-		System.out.println("employeeRepository.getEmployeeByEmail(\"myakovlivf@ucsd.edu\") = "
+		System.out.println("employeeRepository.getEmployeeByEmail = "
 				+ employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
 
 		employeeRepository.updateEmployeeJPQL(1);
 		employeeRepository.updateEmployeeNativeQuery(1);
 
-		System.out.println("departmentRepository.retrieveDepartmentByDivisionContains(\"om\") = "
+		System.out.println("departmentRepository.retrieveDepartmentByDivisionContains = "
 				+ departmentRepository.retrieveDepartmentByDivisionContains("om"));
+		System.out.println("employeeRepository.retrieveEmployeeSalaryGreaterThan = "
+				+ employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
 
+		System.out.println("departmentRepository.findOzzyDepartment = "
+				+ departmentRepository.findOzzyDepartment("Kids"));
+
+		System.out.println("departmentRepository.retrieveAllDepartments() = " +
+				departmentRepository.retrieveAllDepartments());
 
 	}
 

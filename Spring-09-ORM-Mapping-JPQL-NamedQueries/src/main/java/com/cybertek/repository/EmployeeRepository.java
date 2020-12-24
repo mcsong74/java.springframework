@@ -53,7 +53,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //before
     @Query("select e from Employee e where e.hireDate < ?1")
     List<Employee> getEmployeeByHireDateBefore(LocalDate date);
-
     //Null
     @Query("select e from Employee e where e.email is null ")
     List<Employee> getEmployeeByEmailIsNull();

@@ -9,7 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Entity
+@Entity //(name="Employees") <- this will change Entity name to Employees
 @Table(name="employees")
 @NoArgsConstructor
 @Getter

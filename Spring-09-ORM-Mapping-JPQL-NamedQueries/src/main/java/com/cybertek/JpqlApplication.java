@@ -28,7 +28,8 @@ public class JpqlApplication {
 		System.out.println("employeeRepository.getEmployeeByEmail(\"myakovlivf@ucsd.edu\") = "
 				+ employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
 
-
+		employeeRepository.updateEmployeeJPQL(1);
+		employeeRepository.updateEmployeeNativeQuery(1);
 	}
 
 }

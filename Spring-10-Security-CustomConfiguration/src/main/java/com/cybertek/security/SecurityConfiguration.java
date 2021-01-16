@@ -10,8 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration //3rd party bean, need @Configuration
-@EnableWebSecurity
+@EnableWebSecurity // enables spring security
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 //        super.configure(http);
@@ -27,6 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        super.configure(auth);
         auth.inMemoryAuthentication()
+                //create user credential and assign role
                 .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
                 .and()
                 .withUser("ozzy").password(passwordEncoder().encode("ozzy123")).roles("USER");
@@ -34,8 +36,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
     PasswordEncoder passwordEncoder(){
+        //PasswordEncoder = interface, passwordEncoder - polymorphism
         return new BCryptPasswordEncoder();
     }
+
 
 
 

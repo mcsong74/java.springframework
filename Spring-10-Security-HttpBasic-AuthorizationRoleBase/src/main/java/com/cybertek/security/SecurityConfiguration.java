@@ -31,10 +31,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests() //request should be authorized
                 .antMatchers("index.html").permitAll()
                 .antMatchers("/profile/**").authenticated() //any user will have access to profile folder
+//                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN") //only admin role has access to admin folder
                 .antMatchers("/management/**").hasAnyRole("ADMIN", "MANAGER") //admin and manager roles have access
                 // to management folder
-                .anyRequest().authenticated()  //incoming request be authenticated
+//                .anyRequest().authenticated()  //incoming request be authenticated
                 .and()
                 .httpBasic();   //perform basic http authentication
 

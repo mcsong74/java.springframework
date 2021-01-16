@@ -23,10 +23,6 @@ public class DataGenerator implements CommandLineRunner {
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Bean
-    PasswordEncoder passwordEncoder(){
-        return  new BCryptPasswordEncoder();
-    }
 
     @Override
     public void run(String... args) throws Exception {

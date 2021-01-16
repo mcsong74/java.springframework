@@ -43,11 +43,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 
-//    @Bean
-//    PasswordEncoder passwordEncoder(){
-//        //PasswordEncoder = interface, passwordEncoder - polymorphism
-//        return new BCryptPasswordEncoder();
-//    }
+    @Bean
+    PasswordEncoder passwordEncoder(){
+        //PasswordEncoder = interface, passwordEncoder - polymorphism
+        return new BCryptPasswordEncoder();
+    }
 
 
 

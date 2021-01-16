@@ -26,7 +26,7 @@ public class User  {
     private String permissions;
 
     //constructor
-    public User(String username, String password, String roles, String permission) {
+    public User(String username, String password,  String roles, String permissions) {
         this.username = username;
         this.password = password;
         this.active = 1;

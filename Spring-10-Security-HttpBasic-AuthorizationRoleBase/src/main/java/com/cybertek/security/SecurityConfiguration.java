@@ -14,25 +14,33 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-//        super.configure(http);
-        http
-                .authorizeRequests() //request should be authorized
-                .anyRequest().authenticated()  //incoming request be authenticated
-                .and()
-                .httpBasic();   //perform basic http authentication
-
-    }
-
-    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 //        super.configure(auth);
         auth.inMemoryAuthentication()
                 //create user credential and assign role
                 .withUser("admin").password(passwordEncoder().encode("admin123")).roles("ADMIN")
                 .and()
-                .withUser("ozzy").password(passwordEncoder().encode("ozzy123")).roles("USER");
+                .withUser("ozzy").password(passwordEncoder().encode("ozzy123")).roles("USER")
+                .and()
+                .withUser("manager").password(passwordEncoder().encode("manager123")).roles("MANAGER");
     }
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+//        super.configure(http);
+        http
+                .authorizeRequests() //request should be authorized
+                .antMatchers("index.html").permitAll()
+                .antMatchers("/profile/**").authenticated() //any user will have access to profile folder
+                .antMatchers("/admin/**").hasRole("ADMIN") //only admin role has access to admin folder
+                .antMatchers("/management/**").hasAnyRole("ADMIN", "MANAGER") //admin and manager roles have access
+                // to management folder
+                .anyRequest().authenticated()  //incoming request be authenticated
+                .and()
+                .httpBasic();   //perform basic http authentication
+
+    }
+
+
 
     @Bean
     PasswordEncoder passwordEncoder(){

@@ -7,6 +7,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration //3rd party bean, need @Configuration
 @EnableWebSecurity // enables spring security
@@ -39,7 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/index")    //after open login page, if success, navigate to the url in parameter
                 .failureUrl("/login?error=true")
-                .permitAll();   //login page has access to everyone
+                .permitAll()   //login page has access to everyone
+                .and()
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) //always fix, methods and param same.
+                .logoutSuccessUrl("/login?logout=true");
 
     }
 

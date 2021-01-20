@@ -31,12 +31,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("index.html").permitAll()
                 .antMatchers("/profile/**").authenticated() //any user will have access to profile folder
 //                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                .antMatchers("/admin/**").hasRole("ADMIN") //only admin role has access to admin folder
-                .antMatchers("/management/**").hasAnyRole("ADMIN", "MANAGER") //admin and manager roles have access
-                // to management folder
+                .antMatchers("/admin/**").hasAuthority("ADMIN")
+                .antMatchers("/management/**").hasAnyAuthority("ADMIN", "MANAGER")
 //                .anyRequest().authenticated()  //incoming request be authenticated
                 .and()
-                .httpBasic();   //perform basic http authentication
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/index")    //after open login page, if success, navigate to the url in parameter
+                .permitAll();   //login page has access to everyone
 
     }
 

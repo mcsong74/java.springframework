@@ -33,8 +33,7 @@ public class UserPrincipal implements UserDetails {
 
         //Extract list of roles
         user.getRoleList().forEach(role->{
-            GrantedAuthority authority=new SimpleGrantedAuthority("ROLE_"+role);
-            //spring naming convention starts with "ROLE_" for roles
+            GrantedAuthority authority=new SimpleGrantedAuthority(role); //for hasAuthority, no need "ROLE_"
             authorityList.add(authority);
 
         });

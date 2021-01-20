@@ -11,12 +11,12 @@ import java.util.List;
 
 //spring security authentication class = UserDetails
 //this class, converts User table to UserDetails
-
 public class UserPrincipal implements UserDetails {
-
+// not a bean, this is a UserDetails interface implementation class
     private User user;
 
     public UserPrincipal(User user) {
+        //constructor, not autowiring constructors
         this.user = user;
     }
 

@@ -41,8 +41,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     }
 
-
-
     @Bean
     PasswordEncoder passwordEncoder(){
         //PasswordEncoder = interface, passwordEncoder - polymorphism

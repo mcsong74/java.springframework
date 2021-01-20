@@ -28,7 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //        super.configure(http);
         http
                 .authorizeRequests() //request should be authorized
-                .antMatchers("index.html").permitAll()
+//                .antMatchers("index.html").permitAll()
                 .antMatchers("/profile/**").authenticated() //any user will have access to profile folder
 //                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/admin/**").hasAuthority("ADMIN")
@@ -38,6 +38,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .loginPage("/login")
                 .defaultSuccessUrl("/index")    //after open login page, if success, navigate to the url in parameter
+                .failureUrl("/login?error=true")
                 .permitAll();   //login page has access to everyone
 
     }

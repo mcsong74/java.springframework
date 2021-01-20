@@ -1,5 +1,6 @@
 package com.cybertek.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -12,7 +13,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration //3rd party bean, need @Configuration
 @EnableWebSecurity // enables spring security
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-
+    @Autowired
+    private UserPrincipalDetailsServiceImpl userPrincipalDetailsService;
 //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ////        super.configure(auth);
@@ -37,14 +39,20 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //                .anyRequest().authenticated()  //incoming request be authenticated
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/login") //login
                 .defaultSuccessUrl("/index")    //after open login page, if success, navigate to the url in parameter
                 .failureUrl("/login?error=true")
                 .permitAll()   //login page has access to everyone
                 .and()
-                .logout()
+                .logout() //for logout
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) //always fix, methods and param same.
-                .logoutSuccessUrl("/login?logout=true");
+                .logoutSuccessUrl("/login?logout=true")
+                .and()
+                .rememberMe() //remember me
+                .tokenValiditySeconds(120)
+                .key("cybertekSecrete")
+                .userDetailsService(userPrincipalDetailsService);
+
 
     }
 

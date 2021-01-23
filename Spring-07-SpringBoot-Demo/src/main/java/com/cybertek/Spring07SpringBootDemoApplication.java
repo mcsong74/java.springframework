@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 
 public class Spring07SpringBootDemoApplication {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 //		SpringApplication.run(Spring07SpringBootDemoApplication.class, args); //creates container and all beans
-		ApplicationContext container=SpringApplication.run(Spring07SpringBootDemoApplication.class, args);
-		Course course=container.getBean("java", Course.class);
-		System.out.println(course.getTeachingHours());
-		ExtraSession course1=container.getBean("officeHours", ExtraSession.class);
-		System.out.println(course1.getHour());
-		Course course3=container.getBean("selenium", Course.class);
-		course3.getTeachingHours();
+        ApplicationContext container = SpringApplication.run(Spring07SpringBootDemoApplication.class, args);
+        Course course = container.getBean("java", Course.class);
+        System.out.println(course.getTeachingHours());
+        ExtraSession course1 = container.getBean("officeHours", ExtraSession.class);
+        System.out.println(course1.getHour());
+        Course course3 = container.getBean("selenium", Course.class);
+        course3.getTeachingHours();
 
 
-	}
+    }
 
 }

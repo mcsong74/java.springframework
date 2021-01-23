@@ -13,12 +13,12 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Genre extends BaseEntity{
+public class Genre extends BaseEntity {
 
     private String name;
 
     @ManyToMany(mappedBy = "genreList")
-    private List<Movie> movieList=new ArrayList<>();
+    private List<Movie> movieList = new ArrayList<>();
 
     public Genre(String name) {
         this.name = name;

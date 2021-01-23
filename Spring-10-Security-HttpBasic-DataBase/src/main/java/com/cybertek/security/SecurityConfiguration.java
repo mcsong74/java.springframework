@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity // enables spring security
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-//    @Override
+    //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ////        super.configure(auth);
 //        auth.inMemoryAuthentication()
@@ -42,14 +42,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
 
-
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         //PasswordEncoder = interface, passwordEncoder - polymorphism
         return new BCryptPasswordEncoder();
     }
-
-
 
 
 }

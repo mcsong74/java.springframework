@@ -13,12 +13,12 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Cinema extends BaseEntity{
+public class Cinema extends BaseEntity {
 
     private String name;
     private String sponsoredName;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE,CascadeType.PERSIST})
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     private Location location;
 
     public Cinema(String name, String sponsoredName) {

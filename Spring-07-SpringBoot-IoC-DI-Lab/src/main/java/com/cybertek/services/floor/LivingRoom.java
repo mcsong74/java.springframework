@@ -12,6 +12,7 @@ public class LivingRoom implements Floor {
     BigDecimal length;
     @Value("${width}")
     BigDecimal width;
+
     @Override
     public BigDecimal getArea() {
         return length.multiply(width);

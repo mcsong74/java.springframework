@@ -11,8 +11,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="account_details")
-public class Account extends BaseEntity{
+@Table(name = "account_details")
+public class Account extends BaseEntity {
 
     private String name;
     private String address;
@@ -24,7 +24,7 @@ public class Account extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
 //    private UserRole role;
-    private UserRole role=UserRole.USER;
+    private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
     private User user;

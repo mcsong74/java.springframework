@@ -23,7 +23,7 @@ public class Java implements Course {
 
     @Override
     public int getTeachingHours() {
-        System.out.println("Instructor: "+instructorName);
-        return 30+extraSession.getHour()+officeHour;
+        System.out.println("Instructor: " + instructorName);
+        return 30 + extraSession.getHour() + officeHour;
     }
 }

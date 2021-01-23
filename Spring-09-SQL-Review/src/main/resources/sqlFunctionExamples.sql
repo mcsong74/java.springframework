@@ -1,7 +1,7 @@
 -- FUNCTION example
-CREATE OR REPLACE FUNCTION  get_department_count_by_name(dep_name varchar )
-returns int
-language plpgsql
+CREATE OR REPLACE FUNCTION get_department_count_by_name(dep_name varchar)
+    returns int
+    language plpgsql
 as
 $$
 declare
@@ -10,7 +10,7 @@ begin
     SELECT COUNT(*)
     into department_count
     FROM employees
-    where department=dep_name;
+    where department = dep_name;
     return department_count;
 end;
 $$
@@ -19,27 +19,30 @@ select get_department_count_by_name('Toys');
 
 
 -- Function returns a table
-CREATE OR REPLACE FUNCTION  get_department(p_pattern varchar )
-returns table(
-    employee_name varchar,
-    employee_email varchar
-)
-language  plpgsql
+CREATE OR REPLACE FUNCTION get_department(p_pattern varchar)
+    returns table
+            (
+                employee_name  varchar,
+                employee_email varchar
+            )
+    language plpgsql
 as
 $$
 
-    begin
-        return query
+begin
+    return query
         select first_name, email
         from employees
-        where department  ilike p_pattern; --- ilike ignore case
+        where department ilike p_pattern;
+    --- ilike ignore case
 --         where department  ilike p_pattern AND email is not null ; --- ilike ignore case
-    end;
+end;
 $$
 
-select * from get_department('%Oth%');
+select *
+from get_department('%Oth%');
 
-DROP FUNCTION  get_department(p_pattern varchar );
+DROP FUNCTION get_department(p_pattern varchar);
 
 
 

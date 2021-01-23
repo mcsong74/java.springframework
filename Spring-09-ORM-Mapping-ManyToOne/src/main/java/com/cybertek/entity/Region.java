@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @NoArgsConstructor
 @Setter
 @Getter
-@Table(name="regions")
+@Table(name = "regions")
 public class Region extends BaseEntity {
 
     private String region;

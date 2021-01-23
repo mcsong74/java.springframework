@@ -12,7 +12,7 @@ import java.util.List;
 //spring security authentication class = UserDetails
 //this class, converts User table to UserDetails
 public class UserPrincipal implements UserDetails {
-// not a bean, this is a UserDetails interface implementation class
+    // not a bean, this is a UserDetails interface implementation class
     private User user;
 
     public UserPrincipal(User user) {
@@ -26,14 +26,14 @@ public class UserPrincipal implements UserDetails {
         List<GrantedAuthority> authorityList = new ArrayList<>();
 
         //Extract list of permission
-        user.getPermissionList().forEach(permission-> {
-            GrantedAuthority authority=  new SimpleGrantedAuthority (permission);
+        user.getPermissionList().forEach(permission -> {
+            GrantedAuthority authority = new SimpleGrantedAuthority(permission);
             authorityList.add(authority);
         });
 
         //Extract list of roles
-        user.getRoleList().forEach(role->{
-            GrantedAuthority authority=new SimpleGrantedAuthority(role); //for hasAuthority, no need "ROLE_"
+        user.getRoleList().forEach(role -> {
+            GrantedAuthority authority = new SimpleGrantedAuthority(role); //for hasAuthority, no need "ROLE_"
             authorityList.add(authority);
 
         });
@@ -67,6 +67,6 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return this.user.getActive()==1;
+        return this.user.getActive() == 1;
     }
 }

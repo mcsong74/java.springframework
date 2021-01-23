@@ -296,7 +296,8 @@ SELECT first_name,
 FROM employees;
 
 SELECT category, COUNT(*)
-From (SELECT first_name, salary,
+From (SELECT first_name,
+             salary,
              CASE
                  when salary < 100000 then 'UNDER PAID'
                  when salary > 100000 AND salary < 160000 then 'PAID WELL'
@@ -309,61 +310,83 @@ GROUP BY category;
 -- Joins --
 
 SELECT first_name, country
-From employees e, regions r
-WHERE r.region_id=e.region_id;
+From employees e,
+     regions r
+WHERE r.region_id = e.region_id;
 
 SELECT first_name, email, division, d.department
-FROM employees e, departments d, regions r
-WHERE e.department=d.department AND e.region_id=r.region_id;
+FROM employees e,
+     departments d,
+     regions r
+WHERE e.department = d.department
+  AND e.region_id = r.region_id;
 
 SELECT first_name, country
-FROM employees INNER  JOIN regions
-ON employees.region_id=regions.region_id;
+FROM employees
+         INNER JOIN regions
+                    ON employees.region_id = regions.region_id;
 
 SELECT first_name, email, division
-FROM employees e INNER JOIN departments d
-    on e.department = d.department
-WHERE email is not null;
-
-SELECT  first_name, email, division, country
 FROM employees e
-    INNER JOIN departments d on e.department = d.department
-    INNER JOIN regions r on e.region_id=r.region_id
+         INNER JOIN departments d
+                    on e.department = d.department
 WHERE email is not null;
 
-SELECT  distinct  department from employees;
-SELECT distinct department from departments;
+SELECT first_name, email, division, country
+FROM employees e
+         INNER JOIN departments d on e.department = d.department
+         INNER JOIN regions r on e.region_id = r.region_id
+WHERE email is not null;
+
+SELECT distinct department
+from employees;
+SELECT distinct department
+from departments;
 
 SELECT distinct e.department, d.department
-FROM employees e LEFT JOIN departments d on e.department=d.department;
+FROM employees e
+         LEFT JOIN departments d on e.department = d.department;
 
 SELECT distinct e.department, d.department
-FROM employees e FULL JOIN departments d on e.department=d.department;
+FROM employees e
+         FULL JOIN departments d on e.department = d.department;
 
 ---- UNION and UNION ALL
-SELECT department FROM employees
+SELECT department
+FROM employees
 UNION
-SELECT department from departments;
+SELECT department
+from departments;
 
-SELECT department FROM employees
+SELECT department
+FROM employees
 UNION
-SELECT department from departments
+SELECT department
+from departments
 UNION
-SELECT country from regions;
+SELECT country
+from regions;
 
-SELECT department FROM employees
+SELECT department
+FROM employees
 UNION ALL
-SELECT department from departments;
+SELECT department
+from departments;
 
-SELECT department FROM employees
+SELECT department
+FROM employees
 UNION ALL
-SELECT department from departments
+SELECT department
+from departments
 UNION ALL
-SELECT country from regions;
+SELECT country
+from regions;
 
-SELECT department FROM employees
-EXCEPT
-SELECT department from departments;
+SELECT department
+FROM employees
+    EXCEPT
+SELECT department
+from departments;
 
 
 

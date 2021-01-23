@@ -26,27 +26,27 @@ import java.util.Set;
 public class CybertekApp {
     public static void main(String[] args) {
 //        BeanFactory container = new ClassPathXmlApplicationContext("config.xml");
-        ApplicationContext container=new ClassPathXmlApplicationContext("config.xml", "config2.xml");
+        ApplicationContext container = new ClassPathXmlApplicationContext("config.xml", "config2.xml");
 
-        Mentor mentor=(Mentor) container.getBean("fullTimeMentor");
+        Mentor mentor = (Mentor) container.getBean("fullTimeMentor");
         mentor.createAccount();
 
-        mentor= (Mentor) container.getBean("partTimeMentor");
+        mentor = (Mentor) container.getBean("partTimeMentor");
         mentor.createAccount();
 
-        Mentor mentor1=container.getBean("fullTimeMentor", Mentor.class);  //2nd parameter(interface)-return object type
+        Mentor mentor1 = container.getBean("fullTimeMentor", Mentor.class);  //2nd parameter(interface)-return object type
         mentor1.createAccount();
 
-        Mentor mentor2=container.getBean("fullTimeMentor", Mentor.class);
+        Mentor mentor2 = container.getBean("fullTimeMentor", Mentor.class);
         mentor2.createAccount();
 
-        Staff staff=container.getBean("fullTimeStaff", Staff.class);
+        Staff staff = container.getBean("fullTimeStaff", Staff.class);
         staff.createAccount();
-        staff=container.getBean("partTimeStaff", Staff.class);
+        staff = container.getBean("partTimeStaff", Staff.class);
         staff.createAccount();
 
-        Arrays.stream(container.getBeanNamesForType(Staff.class)).forEach(b->System.out.println("name= "+b));
-        Arrays.stream(container.getBeanNamesForType(Mentor.class)).forEach(b->System.out.println(b.toString()));
+        Arrays.stream(container.getBeanNamesForType(Staff.class)).forEach(b -> System.out.println("name= " + b));
+        Arrays.stream(container.getBeanNamesForType(Mentor.class)).forEach(b -> System.out.println(b.toString()));
 
 
     }

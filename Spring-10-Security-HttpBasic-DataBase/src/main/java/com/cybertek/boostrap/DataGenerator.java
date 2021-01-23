@@ -29,9 +29,9 @@ public class DataGenerator implements CommandLineRunner {
         //Delete all
         userRepository.deleteAll();
         //create users
-        User employee= new User("ozzy", passwordEncoder.encode("ozzy123"), "USER", "");
-        User admin = new User("admin", passwordEncoder.encode("admin123"),"ADMIN", "ACCESS_TEST1, ACCESS_TEST2");
-        User manager= new User("manager", passwordEncoder.encode("manager123"), "MANAGER", "ACCESS_TEST1");
+        User employee = new User("ozzy", passwordEncoder.encode("ozzy123"), "USER", "");
+        User admin = new User("admin", passwordEncoder.encode("admin123"), "ADMIN", "ACCESS_TEST1, ACCESS_TEST2");
+        User manager = new User("manager", passwordEncoder.encode("manager123"), "MANAGER", "ACCESS_TEST1");
 
         List<User> users = Arrays.asList(employee, admin, manager);
 

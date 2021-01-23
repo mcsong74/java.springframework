@@ -22,10 +22,10 @@ public class UserPrincipalDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
 
         User user = userRepository.findByUsername(s);  //get user from db
-        if (user == null){
+        if (user == null) {
             throw new UsernameNotFoundException("User does not exists");
         }
-        UserPrincipal userPrincipal=new UserPrincipal(user);   //converts user obj to user details obj
+        UserPrincipal userPrincipal = new UserPrincipal(user);   //converts user obj to user details obj
         return userPrincipal;
     }
 }

@@ -15,7 +15,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserPrincipalDetailsServiceImpl userPrincipalDetailsService;
-//    @Override
+
+    //    @Override
 //    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 ////        super.configure(auth);
 //        auth.inMemoryAuthentication()
@@ -57,14 +58,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
 
-
     @Bean
-    PasswordEncoder passwordEncoder(){
+    PasswordEncoder passwordEncoder() {
         //PasswordEncoder = interface, passwordEncoder - polymorphism
         return new BCryptPasswordEncoder();
     }
-
-
 
 
 }

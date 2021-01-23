@@ -17,16 +17,16 @@ import java.util.Arrays;
 public class EmployeeController {
 
     @GetMapping("/register")
-    public String employeeCreate(Model model){
+    public String employeeCreate(Model model) {
         model.addAttribute("employee", new Employee());
         model.addAttribute("stateList", DataGenerator.getStateList());
         return "/employee/employee-create";
     }
 
     @PostMapping("/list")
-    public String employeeList( Employee employee, Model model){
+    public String employeeList(Employee employee, Model model) {
         model.addAttribute("employeeList", Arrays.asList(employee));
-        model.addAttribute("age", LocalDate.now().getYear()-LocalDate.parse(employee.getBirthday()).getYear());
+        model.addAttribute("age", LocalDate.now().getYear() - LocalDate.parse(employee.getBirthday()).getYear());
         return "/employee/employee-list";
     }
 }

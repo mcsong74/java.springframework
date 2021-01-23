@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Movie extends BaseEntity{
+public class Movie extends BaseEntity {
     private String name;
 
     @Column(columnDefinition = "DATE") //Jave 8
@@ -35,8 +35,8 @@ public class Movie extends BaseEntity{
     private BigDecimal price;
 
     @ManyToMany
-    @JoinTable(name="movie_genre_rel",
-            joinColumns = @JoinColumn(name="movie_id"), inverseJoinColumns = @JoinColumn(name="genre_id"))
+    @JoinTable(name = "movie_genre_rel",
+            joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private List<Genre> genreList = new ArrayList<>(); //Set will be better, but for this lab using List
 
     public Movie(String name, LocalDate releaseDate, Integer duration,

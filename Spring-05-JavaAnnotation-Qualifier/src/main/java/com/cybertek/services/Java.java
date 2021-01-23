@@ -16,6 +16,7 @@ public class Java implements Course {
 
     //constructor injection using @Qualifier
     private ExtraSessions extraSessions;
+
     public Java(@Qualifier("officeHours") ExtraSessions extraSessions) {
         //in constructor, autowired not required, if multiple, at least one need it
         this.extraSessions = extraSessions;
@@ -23,6 +24,6 @@ public class Java implements Course {
 
     @Override
     public void getTeachingHours() {
-        System.out.println("Weekly Java Class teaching hours: "+(30+extraSessions.getHours())+" hr");
+        System.out.println("Weekly Java Class teaching hours: " + (30 + extraSessions.getHours()) + " hr");
     }
 }

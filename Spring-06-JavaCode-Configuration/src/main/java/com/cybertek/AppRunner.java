@@ -9,9 +9,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AppRunner {
     public static void main(String[] args) {
-        ApplicationContext container=new AnnotationConfigApplicationContext(AppConfig.class); //create container using
+        ApplicationContext container = new AnnotationConfigApplicationContext(AppConfig.class); //create container using
         // Java Code
-        Course course= container.getBean("java", Course.class);
+        Course course = container.getBean("java", Course.class);
         course.getTeachingHours();
         System.out.println(course.toString());
     }

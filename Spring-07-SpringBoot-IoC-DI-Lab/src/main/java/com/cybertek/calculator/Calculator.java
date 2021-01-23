@@ -21,13 +21,13 @@ public class Calculator {
     @Autowired
     private Floor floor;
 
-    public String getTotalCarpetCost (City city) throws Exception{
-        BigDecimal cost=carpet.getSqFtPrice(city).multiply(floor.getArea());
-        if (cost.compareTo(BigDecimal.ZERO)==0){
-            throw new Exception ("This city does not exist");
+    public String getTotalCarpetCost(City city) throws Exception {
+        BigDecimal cost = carpet.getSqFtPrice(city).multiply(floor.getArea());
+        if (cost.compareTo(BigDecimal.ZERO) == 0) {
+            throw new Exception("This city does not exist");
         }
-        DecimalFormat dollar =new DecimalFormat("#,###.00");
-        return "Total cost for Carpet : "+ dollar.format(cost.doubleValue());
+        DecimalFormat dollar = new DecimalFormat("#,###.00");
+        return "Total cost for Carpet : " + dollar.format(cost.doubleValue());
     }
 
 

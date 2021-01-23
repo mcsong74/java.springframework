@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
 
     @GetMapping("/index")
-    public String index(){
+    public String index() {
         return "index";
     }
+
     //...
-    @GetMapping(value={"/login", "/"})
-    public String login(){
+    @GetMapping(value = {"/login", "/"})
+    public String login() {
         // '/login' and '/', will load login.html
         return "login";
     }

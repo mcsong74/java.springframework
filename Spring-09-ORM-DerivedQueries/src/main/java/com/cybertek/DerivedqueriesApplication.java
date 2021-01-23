@@ -11,49 +11,50 @@ import javax.annotation.PostConstruct;
 
 @SpringBootApplication
 public class DerivedqueriesApplication {
-	@Autowired
-	RegionRepository regionRepository;
-	@Autowired
-	DepartmentRepository departmentRepository;
-	@Autowired
-	EmployeeRepository employeeRepository;
-	public static void main(String[] args) {
-		SpringApplication.run(DerivedqueriesApplication.class, args);
-	}
+    @Autowired
+    RegionRepository regionRepository;
+    @Autowired
+    DepartmentRepository departmentRepository;
+    @Autowired
+    EmployeeRepository employeeRepository;
 
-	@PostConstruct
-	public void testRegions(){
+    public static void main(String[] args) {
+        SpringApplication.run(DerivedqueriesApplication.class, args);
+    }
 
-		System.out.println("------------------Region Starts -----------------------");
-		System.out.println("FindByCountry: " + regionRepository.findByCountry("Canada"));
-		System.out.println("FindRigionsByCountry: "+regionRepository.findRegionsByCountry("Canada"));
-		System.out.println("FindAllByCountry: "+regionRepository.findAllByCountry("Canada"));
-		System.out.println("FindDistinctByCountry: "+regionRepository.findDistinctByCountry("Canada"));
-		System.out.println("FindAllByCountryContains: "+regionRepository.findAllByCountryContains("United"));
-		System.out.println("FindAllByCountryContaining: "+regionRepository.findByCountryContaining("United"));
-		System.out.println("FindAllByCountryContainingOrderByRegions: "+regionRepository.findAllByCountryContainsOrderByRegion("United"));
-		System.out.println("FindAllByCountryContainingOrderByCountry: "+regionRepository.findAllByCountryContainsOrderByCountry("Asia"));
-		System.out.println("FindTopBy2ByCountry: "+regionRepository.findTop2ByCountry("Canada"));
-		System.out.println("------------------Region Ends -----------------------");
+    @PostConstruct
+    public void testRegions() {
 
-		System.out.println("------------------Department Starts -----------------------");
-		System.out.println("findAllByDepartment : "+departmentRepository.findAllByDepartment("Furniture"));
-		System.out.println("findAllByDivision : "+departmentRepository.findAllByDivision("Health"));
-		System.out.println("findByDivisionIs : "+departmentRepository.findByDivisionIs("Health"));
-		System.out.println("findByDivisionEquals : "+departmentRepository.findByDivisionEquals("Health"));
-		System.out.println("findByDivisionEndsWith : "+departmentRepository.findByDivisionEndsWith("ics"));
-		System.out.println("findByDivisionEndingWith : "+departmentRepository.findByDivisionEndingWith("ics"));
-		System.out.println("findDistinctByDivisionContaining : "+departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
-		System.out.println("------------------Department Ends -----------------------");
+        System.out.println("------------------Region Starts -----------------------");
+        System.out.println("FindByCountry: " + regionRepository.findByCountry("Canada"));
+        System.out.println("FindRigionsByCountry: " + regionRepository.findRegionsByCountry("Canada"));
+        System.out.println("FindAllByCountry: " + regionRepository.findAllByCountry("Canada"));
+        System.out.println("FindDistinctByCountry: " + regionRepository.findDistinctByCountry("Canada"));
+        System.out.println("FindAllByCountryContains: " + regionRepository.findAllByCountryContains("United"));
+        System.out.println("FindAllByCountryContaining: " + regionRepository.findByCountryContaining("United"));
+        System.out.println("FindAllByCountryContainingOrderByRegions: " + regionRepository.findAllByCountryContainsOrderByRegion("United"));
+        System.out.println("FindAllByCountryContainingOrderByCountry: " + regionRepository.findAllByCountryContainsOrderByCountry("Asia"));
+        System.out.println("FindTopBy2ByCountry: " + regionRepository.findTop2ByCountry("Canada"));
+        System.out.println("------------------Region Ends -----------------------");
 
-		System.out.println("------------------Employee Starts -----------------------");
+        System.out.println("------------------Department Starts -----------------------");
+        System.out.println("findAllByDepartment : " + departmentRepository.findAllByDepartment("Furniture"));
+        System.out.println("findAllByDivision : " + departmentRepository.findAllByDivision("Health"));
+        System.out.println("findByDivisionIs : " + departmentRepository.findByDivisionIs("Health"));
+        System.out.println("findByDivisionEquals : " + departmentRepository.findByDivisionEquals("Health"));
+        System.out.println("findByDivisionEndsWith : " + departmentRepository.findByDivisionEndsWith("ics"));
+        System.out.println("findByDivisionEndingWith : " + departmentRepository.findByDivisionEndingWith("ics"));
+        System.out.println("findDistinctByDivisionContaining : " + departmentRepository.findDistinctTop3ByDivisionContaining("Hea"));
+        System.out.println("------------------Department Ends -----------------------");
+
+        System.out.println("------------------Employee Starts -----------------------");
 //		System.out.println("findByEmail : "+employeeRepository.findByEmail(""));
 //		System.out.println("findAllByFirstNameIsAnAndLastNameIsOrEmailIs : "+employeeRepository.findAllByFirstNameIsAnAndLastNameIsOrEmailIs("", "", ""));
 //		System.out.println("findByFirstNameAndLastNameOrEmail : "+employeeRepository.findByFirstNameAndLastNameOrEmail("", "",""));
 //		System.out.println("findByFirstNameIsNot : "+employeeRepository.findByFirstNameIsNot("Avrom"));
 //		System.out.println("findByLastNameStartsWith : "+employeeRepository.findByLastNameStartsWith(""));
-		System.out.println("findBySalaryGreaterThan : "+employeeRepository.findBySalaryGreaterThan(100000));
+        System.out.println("findBySalaryGreaterThan : " + employeeRepository.findBySalaryGreaterThan(100000));
 
-		System.out.println("------------------Employee Ends -----------------------");
-	}
+        System.out.println("------------------Employee Ends -----------------------");
+    }
 }

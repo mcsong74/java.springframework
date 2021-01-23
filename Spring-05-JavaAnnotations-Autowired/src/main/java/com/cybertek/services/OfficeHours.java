@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 public class OfficeHours implements ExtraSessions {
     @Override
     public int getHours() {
-        return  4;
+        return 4;
     }
 
 }

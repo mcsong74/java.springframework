@@ -11,13 +11,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
-@Table(name="employees")
+@Table(name = "employees")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Employee extends BaseEntity{
-//    @Id
+public class Employee extends BaseEntity {
+    //    @Id
 //    private Long id;
     private String firstName;
     private String lastName;
@@ -32,11 +32,11 @@ public class Employee extends BaseEntity{
     private Integer salary;
 
     @ManyToOne  //no need cascade because department will be entered in the database
-    @JoinColumn(name="department")
+    @JoinColumn(name = "department")
     private Department department;
 
     @ManyToOne
-    @JoinColumn(name="regionId")
+    @JoinColumn(name = "regionId")
     private Region region;
 
 }

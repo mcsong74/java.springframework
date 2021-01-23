@@ -26,6 +26,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //Display all employees with salaries higher than ''
     List<Employee> findBySalaryGreaterThan(Integer salary);
+
     //Display all employees with salaries less than ''
     List<Employee> findBySalaryLessThan(Integer salary);
 
@@ -40,7 +41,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //Display all employees that do not have email address
     List<Employee> findByEmailIsNull();
-
 
 
 }

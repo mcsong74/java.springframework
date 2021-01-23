@@ -10,13 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="regions")
+@Table(name = "regions")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class Region extends BaseEntity{
-//    @Id
+public class Region extends BaseEntity {
+    //    @Id
 //    private Long id;
     private String region;
     private String country;

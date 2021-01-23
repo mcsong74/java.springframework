@@ -14,15 +14,14 @@ public class DataGenerator implements CommandLineRunner {
     PostRepository postRepository;
 
 
-
     @Override
     public void run(String... args) throws Exception {
 
-        Post post= new Post("ORM", "Many to many mapping");
-        Post post1= new Post("MVC", "Controller");
+        Post post = new Post("ORM", "Many to many mapping");
+        Post post1 = new Post("MVC", "Controller");
 
-        Tag tag= new Tag("Springboot");
-        Tag tag1= new Tag("JPA");
+        Tag tag = new Tag("Springboot");
+        Tag tag1 = new Tag("JPA");
 
         post.getTags().add(tag);
         post.getTags().add(tag1);
@@ -35,12 +34,6 @@ public class DataGenerator implements CommandLineRunner {
 
         postRepository.save(post);
         postRepository.save(post1);
-
-
-
-
-
-
 
 
     }

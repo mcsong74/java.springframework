@@ -7,10 +7,10 @@ import lombok.Data;
 
 public class Java implements Course {
     private ExtraSession extraSession;
+
     public void setExtraSession(ExtraSession extraSession) {
         this.extraSession = extraSession;
     }
-
 
 
 //    private OfficeHours officeHours;
@@ -27,9 +27,8 @@ public class Java implements Course {
 //
 
 
-
     public void getTeachingHours() {
 
-        System.out.println("Weekly Teaching Hours: "+(20+extraSession.getHours()));
+        System.out.println("Weekly Teaching Hours: " + (20 + extraSession.getHours()));
     }
 }

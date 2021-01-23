@@ -8,15 +8,15 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table (name="departments")
+@Table(name = "departments")
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-@NamedQuery(name="Department.findOzzyDepartment", query = "select d from Department d where d.division = ?1")
-@NamedNativeQuery(name="Department.retrieveAllDepartments",
-        query="Select * from departments",
-        resultClass= Department.class)
+@NamedQuery(name = "Department.findOzzyDepartment", query = "select d from Department d where d.division = ?1")
+@NamedNativeQuery(name = "Department.retrieveAllDepartments",
+        query = "Select * from departments",
+        resultClass = Department.class)
 public class Department {
 
     @Id

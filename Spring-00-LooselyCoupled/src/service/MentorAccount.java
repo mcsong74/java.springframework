@@ -11,7 +11,7 @@ public class MentorAccount {
         this.mentor = mentor;   //polymorphism occurs here
     }
 
-    public void manageAccount(){
+    public void manageAccount() {
         this.mentor.createAccount();
     }
 }

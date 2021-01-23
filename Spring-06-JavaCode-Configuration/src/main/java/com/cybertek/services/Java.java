@@ -19,8 +19,9 @@ public class Java implements Course {
     @Override
     public void getTeachingHours() {
         System.out.println("Weekly Java class teaching: 30 hr");
-        System.out.println("Weekly Extra office hour session: "+extraSessions.getHours());
+        System.out.println("Weekly Extra office hour session: " + extraSessions.getHours());
     }
+
     @Value("JD1")
     private String batch;
     @Value("${instructor}")

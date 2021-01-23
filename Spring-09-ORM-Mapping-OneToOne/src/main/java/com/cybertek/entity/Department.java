@@ -9,11 +9,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="departments")
+@Table(name = "departments")
 @Setter
 @Getter
 @NoArgsConstructor
-public class Department extends BaseEntity{
+public class Department extends BaseEntity {
 
     private String department;
     private String division;

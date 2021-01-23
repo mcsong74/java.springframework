@@ -9,7 +9,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name="tags")
+@Table(name = "tags")
 @NoArgsConstructor
 @Setter
 @Getter
@@ -22,7 +22,7 @@ public class Tag {
     private String name;
 
     @ManyToMany(mappedBy = "tags", cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-    private Set<Post> posts=new HashSet<>();
+    private Set<Post> posts = new HashSet<>();
 
 
     public Tag(String name) {

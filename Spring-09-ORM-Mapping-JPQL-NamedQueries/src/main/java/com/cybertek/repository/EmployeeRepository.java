@@ -25,6 +25,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //Single positional bind parameter
     @Query("select e from Employee e where e.email=?1")
     Optional<Employee> getEmployeeByEmail(String email); //optional protects null pointer exception when it is null
+
     //multiple positional bind parameter
     @Query("select e from Employee e where e.email=?1 and e.salary=?2")
     Employee getEmployeeByEmailAndSalary(String email, Integer salary);
@@ -32,6 +33,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //single named parameter
     @Query("select e from Employee e where e.salary=:salary")
     Employee getEmployeeBySalary(@Param("salary") Integer salary);
+
     //multiple named parameter
     @Query("select e from Employee e where e.firstName=:firstname or e.salary=:salary")
     List<Employee> getEmployeeByFirstNameOrSalary(@Param("firstname") String firstname, @Param("salary") int salary);
@@ -43,38 +45,49 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     //Like/contains/starts with/ends with
     @Query("select e from Employee e where e.firstName like ?1")
     List<Employee> getEmployeeByFirstNameLike(String pattern);
+
     //Less than
     @Query("select e from Employee e where e.salary < ?1")
     List<Employee> getEmployeeBySalaryLessThan(int salary);
+
     //Greater than
     @Query("select e from Employee e where e.salary > ?1")
     List<Employee> getEmployeeBySalaryGreaterThan(int salary);
+
     //between
     @Query("select e from Employee e where e.salary between ?1 and ?2")
     List<Employee> getEmployeeBySalaryBetween(int salary1, int salary2);
+
     //before
     @Query("select e from Employee e where e.hireDate < ?1")
     List<Employee> getEmployeeByHireDateBefore(LocalDate date);
+
     //Null
     @Query("select e from Employee e where e.email is null ")
     List<Employee> getEmployeeByEmailIsNull();
+
     //not null
     @Query("select e from Employee e where e.email is not null ")
     List<Employee> getEmployeeByEmailIsNotNull();
+
     //Sort salary in ascending order
     @Query("select e from Employee e order by e.salary asc")
     List<Employee> getEmployeeBySalaryOrderByAsc();
+
     //Sort salary in descending order
     @Query("select e from Employee e order by e.salary desc ")
     List<Employee> getEmployeeBySalaryOrderBydesc();
+
     //native query
     @Query(value = "Select * from employees where salary=?1", nativeQuery = true)
     List<Employee> readEmployeeBySalary(int salary);
+
     //UPDATE, JPQL
     @Modifying
     @Transactional
     @Query("UPDATE Employee e SET e.email='admin@email.com' where e.id=:id")
     void updateEmployeeJPQL(@Param("id") long id);
+
     //UPDATE, Native Query
     @Modifying
     @Transactional
@@ -84,7 +97,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     //*** Named Queries ***
     List<Employee> retrieveEmployeeSalaryGreaterThan(Integer salary);
-
 
 
 }

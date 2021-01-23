@@ -9,10 +9,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 @NoArgsConstructor
 @Getter
-public class User  {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,7 +24,7 @@ public class User  {
     private String permissions;
 
     //constructor
-    public User(String username, String password,  String roles, String permissions) {
+    public User(String username, String password, String roles, String permissions) {
         this.username = username;
         this.password = password;
         this.active = 1;
@@ -32,15 +32,15 @@ public class User  {
         this.permissions = permissions;
     }
 
-    public List<String> getRoleList(){
-        if (this.roles.length()>0){
+    public List<String> getRoleList() {
+        if (this.roles.length() > 0) {
             return Arrays.asList(this.roles.split(","));
         }
         return new ArrayList<>();
     }
 
-    public List<String> getPermissionList(){
-        if (this.permissions.length()>0){
+    public List<String> getPermissionList() {
+        if (this.permissions.length() > 0) {
             return Arrays.asList(this.permissions.split(","));
 
         }

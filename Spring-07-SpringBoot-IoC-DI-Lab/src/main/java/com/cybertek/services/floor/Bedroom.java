@@ -10,6 +10,7 @@ import java.math.BigDecimal;
 public class Bedroom implements Floor {
     @Value("${width}")
     BigDecimal width;
+
     @Override
     public BigDecimal getArea() {
         return width.pow(2);

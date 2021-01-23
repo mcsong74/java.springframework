@@ -8,7 +8,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity //relation mapping heppens
-@Table(name="cars")
+@Table(name = "cars")
 @NoArgsConstructor
 //@AllArgsConstructor
 @Getter

@@ -12,39 +12,40 @@ import javax.annotation.PostConstruct;
 @SpringBootApplication
 public class JpqlApplication {
 
-	@Autowired
-	EmployeeRepository employeeRepository;
-	@Autowired
-	DepartmentRepository departmentRepository;
-	public static void main(String[] args) {
+    @Autowired
+    EmployeeRepository employeeRepository;
+    @Autowired
+    DepartmentRepository departmentRepository;
 
-		SpringApplication.run(JpqlApplication.class, args);
-	}
+    public static void main(String[] args) {
 
-	@PostConstruct
-	public void testEmployee(){
-		System.out.println("employeeRepository.getEmployeeDetail() = "
-				+ employeeRepository.getEmployeeDetail());
-		System.out.println("employeeRepository.getEmployeeSalary() = "
-				+ employeeRepository.getEmployeeSalary());
+        SpringApplication.run(JpqlApplication.class, args);
+    }
 
-		System.out.println("employeeRepository.getEmployeeByEmail = "
-				+ employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
+    @PostConstruct
+    public void testEmployee() {
+        System.out.println("employeeRepository.getEmployeeDetail() = "
+                + employeeRepository.getEmployeeDetail());
+        System.out.println("employeeRepository.getEmployeeSalary() = "
+                + employeeRepository.getEmployeeSalary());
 
-		employeeRepository.updateEmployeeJPQL(1);
-		employeeRepository.updateEmployeeNativeQuery(1);
+        System.out.println("employeeRepository.getEmployeeByEmail = "
+                + employeeRepository.getEmployeeByEmail("myakovlivf@ucsd.edu").get());
 
-		System.out.println("departmentRepository.retrieveDepartmentByDivisionContains = "
-				+ departmentRepository.retrieveDepartmentByDivisionContains("om"));
-		System.out.println("employeeRepository.retrieveEmployeeSalaryGreaterThan = "
-				+ employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
+        employeeRepository.updateEmployeeJPQL(1);
+        employeeRepository.updateEmployeeNativeQuery(1);
 
-		System.out.println("departmentRepository.findOzzyDepartment = "
-				+ departmentRepository.findOzzyDepartment("Kids"));
+        System.out.println("departmentRepository.retrieveDepartmentByDivisionContains = "
+                + departmentRepository.retrieveDepartmentByDivisionContains("om"));
+        System.out.println("employeeRepository.retrieveEmployeeSalaryGreaterThan = "
+                + employeeRepository.retrieveEmployeeSalaryGreaterThan(100000));
 
-		System.out.println("departmentRepository.retrieveAllDepartments() = " +
-				departmentRepository.retrieveAllDepartments());
+        System.out.println("departmentRepository.findOzzyDepartment = "
+                + departmentRepository.findOzzyDepartment("Kids"));
 
-	}
+        System.out.println("departmentRepository.retrieveAllDepartments() = " +
+                departmentRepository.retrieveAllDepartments());
+
+    }
 
 }

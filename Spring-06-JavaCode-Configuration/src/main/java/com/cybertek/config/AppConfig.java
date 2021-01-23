@@ -15,20 +15,22 @@ public class AppConfig {
 
     @Bean
 //    @Scope("prototype")
-    public Java java(){ //3rd party class, can inject this way
+    public Java java() { //3rd party class, can inject this way
 //        return new Java(officeHours());
         return new Java(extraSessions());
     }
+
     @Bean
-    public Selenium selenium(){
+    public Selenium selenium() {
         return new Selenium();
     }//3rd party class, can inject this way
-//    @Bean
+
+    //    @Bean
 //    public OfficeHours officeHours(){
 //        return new OfficeHours();
 //    }
     @Bean//3rd party class, can inject this way
-    public ExtraSessions extraSessions(){ //ExtraSessions ex=new OfficeHours(); //more loosely couple
+    public ExtraSessions extraSessions() { //ExtraSessions ex=new OfficeHours(); //more loosely couple
         return new OfficeHours();
     }
 

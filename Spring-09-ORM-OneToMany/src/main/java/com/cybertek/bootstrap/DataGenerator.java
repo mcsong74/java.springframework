@@ -16,15 +16,16 @@ public class DataGenerator implements CommandLineRunner {
     PersonRepository personRepository;
     @Autowired
     AddressRepository addressRepository;
+
     @Override
     public void run(String... args) throws Exception {
-        Person p1= new Person("Mike", "Smith");
-        Person p2= new Person("Ozzy", "Kmith");
-        Person p3= new Person("Tedd", "Bbith");
+        Person p1 = new Person("Mike", "Smith");
+        Person p2 = new Person("Ozzy", "Kmith");
+        Person p3 = new Person("Tedd", "Bbith");
 
-        Address a1= new Address("123 King St", "12345");
-        Address a2= new Address("234 Elm St", "52543");
-        Address a3= new Address("542 Java St", "22414");
+        Address a1 = new Address("123 King St", "12345");
+        Address a2 = new Address("234 Elm St", "52543");
+        Address a3 = new Address("542 Java St", "22414");
 
 //        p1.setAddresses(Arrays.asList(a1,a2));//case-1
 //        personRepository.save(p1);//case-1

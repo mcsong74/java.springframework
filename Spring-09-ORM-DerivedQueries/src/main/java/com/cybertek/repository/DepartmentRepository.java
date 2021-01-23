@@ -14,11 +14,14 @@ public interface DepartmentRepository extends JpaRepository<Department, String> 
 
     //Display all departments in the health devision
     List<Department> findAllByDivision(String division);
+
     List<Department> findByDivisionIs(String division);
+
     List<Department> findByDivisionEquals(String division);
 
     //Display all departments with division name ends with 'ics'
     List<Department> findByDivisionEndsWith(String pattern);
+
     List<Department> findByDivisionEndingWith(String pattern);
 
     //Display top 3 departments with division name includes 'Hea', without duplicates

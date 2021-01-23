@@ -9,11 +9,11 @@ import org.springframework.context.ApplicationContext;
 @SpringBootApplication
 public class CybertekLabApplication {
 
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-		ApplicationContext container= SpringApplication.run(CybertekLabApplication.class, args);
-		Calculator calculator=container.getBean("calculator", Calculator.class);
-		System.out.println(calculator.getTotalCarpetCost(City.AUSTIN));
-	}
+        ApplicationContext container = SpringApplication.run(CybertekLabApplication.class, args);
+        Calculator calculator = container.getBean("calculator", Calculator.class);
+        System.out.println(calculator.getTotalCarpetCost(City.AUSTIN));
+    }
 
 }

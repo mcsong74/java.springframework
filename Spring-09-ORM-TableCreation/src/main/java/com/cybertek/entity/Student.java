@@ -9,12 +9,12 @@ import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
-@Table (name="students")
+@Table(name = "students")
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="studentFirstName")
+    @Column(name = "studentFirstName")
     private String firstname;
     private String lastname;
     private String email;
@@ -29,7 +29,7 @@ public class Student {
     @Temporal(TemporalType.TIMESTAMP)
     private Date birthDateTime;
 
-    @Column(columnDefinition ="DATE")
+    @Column(columnDefinition = "DATE")
     private LocalDate localDate;
     @Column(columnDefinition = "TIME")
     private LocalTime localTime;

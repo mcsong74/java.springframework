@@ -32,6 +32,6 @@ public class Java implements Course {
 
     @Override
     public void getTeachingHours() {
-        System.out.println("Weekly Java Class teaching hours: "+(30+extraSessions.getHours())+" hr");
+        System.out.println("Weekly Java Class teaching hours: " + (30 + extraSessions.getHours()) + " hr");
     }
 }

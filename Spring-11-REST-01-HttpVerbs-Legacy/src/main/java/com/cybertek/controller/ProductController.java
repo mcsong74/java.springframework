@@ -3,10 +3,7 @@ package com.cybertek.controller;
 import com.cybertek.entity.Product;
 import com.cybertek.service.ProductService;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,9 +26,21 @@ public class ProductController {
     }
 
     //create Product
-    //Delete Product
-    //Update Product - @RequestBody
+    @RequestMapping(value="/products", method = RequestMethod.POST)
+    public @ResponseBody List<Product> createProduct(@RequestBody Product product){
 
+        return productService.createProduct(product);
+    }
+    //Delete Product
+    @RequestMapping(value="/products/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody List<Product> deleteProduct(@PathVariable("id") long id){
+        return productService.delete(id);
+    }
+    //Update Product - @RequestBody
+    @RequestMapping(value="/product/{id}", method = RequestMethod.PUT)
+    public @ResponseBody List<Product> updateProduct(@PathVariable("id") long id, @RequestBody Product product){
+        return productService.updateProduct(id, product);
+    }
 
 
 

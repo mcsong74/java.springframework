@@ -2,6 +2,7 @@ package com.cybertek.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,11 +15,12 @@ import javax.persistence.*;
 @Getter
 @Setter
 @JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true)
-//if there is Fetching type Lazy spring will add one field automatically which is LazyInitializer. Ignore the field,
+//if there is Fetching type Lazy spring will add one field automatically which is hibernateLazyInitializer. Ignore the field,
 // and do not try to de-serialize
 public class User extends BaseEntity { //User is reserve name in SQL table
 
     private String email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) //will only works on setter
     private String password;
     private String username;
 

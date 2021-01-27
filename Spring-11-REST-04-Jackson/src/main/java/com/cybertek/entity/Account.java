@@ -30,7 +30,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference
+    @JsonBackReference //dependency
     private User user;
 
     public Account(String name, String address, String country, String city, String state,

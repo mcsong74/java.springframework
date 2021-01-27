@@ -37,6 +37,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-01-HttpVerbs-Legacy/Spring-11-REST-01-HttpVerbs-Legacy.iml" filepath="$PROJECT_DIR$/Spring-11-REST-01-HttpVerbs-Legacy/Spring-11-REST-01-HttpVerbs-Legacy.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-02-HttpPrefered/Spring-11-REST-02-HttpPrefered.iml" filepath="$PROJECT_DIR$/Spring-11-REST-02-HttpPrefered/Spring-11-REST-02-HttpPrefered.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-03-ResponseEntity/Spring-11-REST-03-ResponseEntity.iml" filepath="$PROJECT_DIR$/Spring-11-REST-03-ResponseEntity/Spring-11-REST-03-ResponseEntity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-04-Jackson/Spring-11-REST-04-Jackson.iml" filepath="$PROJECT_DIR$/Spring-11-REST-04-Jackson/Spring-11-REST-04-Jackson.iml" />
     </modules>
   </component>
 </project>

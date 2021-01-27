@@ -16,8 +16,9 @@ import javax.persistence.ManyToOne;
 @NoArgsConstructor
 @Getter
 @Setter
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class) //set how to display in json the name of the data column
-@JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class) //set how to display in json the name of the data column,
+// json naming convention
+@JsonIgnoreProperties(value={"hibernate_Lazy_Initializer"}, ignoreUnknown = true)
 public class Cinema extends BaseEntity {
 
     private String name;

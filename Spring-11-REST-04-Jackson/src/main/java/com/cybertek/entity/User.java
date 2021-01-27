@@ -26,7 +26,8 @@ public class User extends BaseEntity { //User is reserve name in SQL table
 
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
     @JoinColumn(name = "account_details_id")
-    @JsonManagedReference //
+    @JsonManagedReference // recognize that when Account is called user will be ignored by @JsonBackReference, when
+    // user is called, account will be shown
     private Account account;
 
     public User(String email, String password, String username) {

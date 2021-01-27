@@ -31,7 +31,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference //dependency
+    @JsonBackReference //dependency, when account is called, user will be ignored
     private User user;
 
     public Account(String name, String address, String country, String city, String state,

@@ -25,19 +25,19 @@ public class ProductController {
         return productService.getProducts();
     }
 
-    //create Product
+    //create Product - POST
     @RequestMapping(value="/products", method = RequestMethod.POST)
     public @ResponseBody List<Product> createProduct(@RequestBody Product product){
 
         return productService.createProduct(product);
     }
-    //Delete Product
+    //Delete Product -DELETE
     @RequestMapping(value="/products/{id}", method = RequestMethod.DELETE)
     public @ResponseBody List<Product> deleteProduct(@PathVariable("id") long id){
         return productService.delete(id);
     }
-    //Update Product - @RequestBody
-    @RequestMapping(value="/product/{id}", method = RequestMethod.PUT)
+    //Update Product - @RequestBody - PUT
+    @RequestMapping(value="/products/{id}", method = RequestMethod.PUT)
     public @ResponseBody List<Product> updateProduct(@PathVariable("id") long id, @RequestBody Product product){
         return productService.updateProduct(id, product);
     }

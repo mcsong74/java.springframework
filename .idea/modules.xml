@@ -35,6 +35,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-10-Security-HttpBasic-AuthorizationRoleBase/Spring-10-Security-HttpBasic-AuthorizationRoleBase.iml" filepath="$PROJECT_DIR$/Spring-10-Security-HttpBasic-AuthorizationRoleBase/Spring-10-Security-HttpBasic-AuthorizationRoleBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-10-Security-HttpBasic-DataBase/Spring-10-Security-HttpBasic-DataBase.iml" filepath="$PROJECT_DIR$/Spring-10-Security-HttpBasic-DataBase/Spring-10-Security-HttpBasic-DataBase.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-01-HttpVerbs-Legacy/Spring-11-REST-01-HttpVerbs-Legacy.iml" filepath="$PROJECT_DIR$/Spring-11-REST-01-HttpVerbs-Legacy/Spring-11-REST-01-HttpVerbs-Legacy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-02-HttpPrefered/Spring-11-REST-02-HttpPrefered.iml" filepath="$PROJECT_DIR$/Spring-11-REST-02-HttpPrefered/Spring-11-REST-02-HttpPrefered.iml" />
     </modules>
   </component>
 </project>

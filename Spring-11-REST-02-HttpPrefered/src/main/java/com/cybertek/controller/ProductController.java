@@ -29,7 +29,6 @@ public class ProductController {
     //create Product - POST
     @PostMapping
     public List<Product> createProduct(@RequestBody Product product){
-
         return productService.createProduct(product);
     }
     //Delete Product -DELETE

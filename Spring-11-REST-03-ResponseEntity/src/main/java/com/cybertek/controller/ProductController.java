@@ -87,5 +87,14 @@ public class ProductController {
                 .ok(new ResponseWrapper("products successfully retrieved", productService.getProducts()));
     }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<ResponseWrapper> deleteProduct1(@PathVariable("id") long id){
+        return ResponseEntity.ok(new ResponseWrapper("product successfully deleted !!!"));
+    }
+    @DeleteMapping("/delete2/{id}")
+    public ResponseEntity<ResponseWrapper> deleteProduct2(@PathVariable("id") long id){
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(new ResponseWrapper("Product Successfully Deleted!!!"));
+    }
+
 
 }

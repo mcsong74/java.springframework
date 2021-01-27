@@ -1,6 +1,7 @@
 package com.cybertek.controller;
 
 import com.cybertek.entity.Product;
+import com.cybertek.entity.ResponseWrapper;
 import com.cybertek.service.ProductService;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -80,6 +81,11 @@ public class ProductController {
 
     }
 
+    @GetMapping("/read")
+    public ResponseEntity<ResponseWrapper> readAllProduct(){
+        return ResponseEntity
+                .ok(new ResponseWrapper("products successfully retrieved", productService.getProducts()));
+    }
 
 
 }

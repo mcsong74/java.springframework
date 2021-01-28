@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -34,12 +36,12 @@ public class Address extends BaseEntity{
     @JsonBackReference
     private Student student;
 
-    @OneToOne(mappedBy = "parent")
+    @OneToOne(mappedBy = "address")
 //    @JsonBackReference //either one can be implemented
     @JsonIgnore
     private Parent parent;
 
-    @OneToOne(mappedBy = "teacher")
+    @OneToOne(mappedBy = "address")
     //added ignore in class level
     private Teacher teacher;
 

@@ -39,6 +39,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-03-ResponseEntity/Spring-11-REST-03-ResponseEntity.iml" filepath="$PROJECT_DIR$/Spring-11-REST-03-ResponseEntity/Spring-11-REST-03-ResponseEntity.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-04-Jackson/Spring-11-REST-04-Jackson.iml" filepath="$PROJECT_DIR$/Spring-11-REST-04-Jackson/Spring-11-REST-04-Jackson.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-05-RestTemplate/Spring-11-REST-05-RestTemplate.iml" filepath="$PROJECT_DIR$/Spring-11-REST-05-RestTemplate/Spring-11-REST-05-RestTemplate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-06-LAB/Spring-11-REST-06-LAB.iml" filepath="$PROJECT_DIR$/Spring-11-REST-06-LAB/Spring-11-REST-06-LAB.iml" />
     </modules>
   </component>
 </project>

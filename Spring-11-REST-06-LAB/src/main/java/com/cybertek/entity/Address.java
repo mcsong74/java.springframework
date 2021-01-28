@@ -15,7 +15,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="addresses")
+@Table(name="address")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer", "teacher"}, ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Address extends BaseEntity{

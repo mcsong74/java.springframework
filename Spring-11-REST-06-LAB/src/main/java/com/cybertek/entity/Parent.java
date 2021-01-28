@@ -15,9 +15,8 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="parents")
+@Table(name="parent")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true)
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Parent extends BaseEntity{
 
     private String firstName;

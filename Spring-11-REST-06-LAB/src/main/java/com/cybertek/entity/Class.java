@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name="classes")
+@Table(name="class")
 public class Class extends BaseEntity{
 
     private String name;

@@ -3,6 +3,7 @@ package com.cybertek.controller;
 import com.cybertek.entity.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
@@ -18,11 +19,18 @@ public class HomeController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping("")
+    @GetMapping
     public User[] readAllUser(){
-        //.getForEntity accepting arrays , so User[] is used, and after conversion returns ResponseEntity
+        //.getForEntity returns arrays , so User[] is used,
         ResponseEntity<User[]> responseEntity=restTemplate.getForEntity(URI, User[].class);
 
         return responseEntity.getBody();
     }
+
+    @GetMapping(value="/{id}")
+    public Object readUser(@PathVariable("id") Long id){
+        String URL=URI+"/{id}"; // data from 3rd party api using ID
+        return restTemplate.getForObject(URL, Object.class, id);
+    }
+
 }

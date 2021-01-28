@@ -1,6 +1,8 @@
 package com.cybertek.controller;
 
+import com.cybertek.entity.Account;
 import com.cybertek.entity.User;
+import com.cybertek.repository.AccountRepository;
 import com.cybertek.repository.UserRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +12,7 @@ import java.util.List;
 @RestController
 public class HomeController {
     private UserRepository userRepository;
+    private AccountRepository accountRepository;
 
     public HomeController(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -20,4 +23,8 @@ public class HomeController {
         return userRepository.findAll();
     }
 
+    @GetMapping("/accounts")
+    public List<Account> readAllAccounts(){
+        return accountRepository.findAll();
+    }
 }

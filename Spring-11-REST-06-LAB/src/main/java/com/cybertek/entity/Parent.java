@@ -1,6 +1,9 @@
 package com.cybertek.entity;
 
 import com.cybertek.enums.Status;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,23 +16,33 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Table(name="parents")
+@JsonIgnoreProperties(value={"hibernateLazyInitializer"}, ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Parent extends BaseEntity{
+
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String username;
+
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
 
     @Column(columnDefinition = "DATE")
     private LocalDate birthday;
-    private String email;
-    private String firstName;
-    private String lastName;
-    private String password;
+
     private String phoneNumber;
-    private String profession;
+
     @Enumerated(EnumType.STRING)
     private Status status;
-    private String username;
 
-    @OneToOne
-    @JoinColumn(name="addressId")
+    private String profession;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="address_id")
     private Address address;
+
+
 
 
 }

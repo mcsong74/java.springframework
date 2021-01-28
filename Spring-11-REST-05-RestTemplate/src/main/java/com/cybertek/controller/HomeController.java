@@ -37,7 +37,7 @@ public class HomeController {
     }
 
     //https://dummyapi.io/data/api/user?limit=10 , example,  header is missing
-    @GetMapping("test")
+    @GetMapping("/test")
     public ResponseEntity<Object> consumePostsFromDummyApi(){
         HttpHeaders headers=new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));

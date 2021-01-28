@@ -14,8 +14,9 @@ public class HomeController {
     private UserRepository userRepository;
     private AccountRepository accountRepository;
 
-    public HomeController(UserRepository userRepository) {
+    public HomeController(UserRepository userRepository, AccountRepository accountRepository) {
         this.userRepository = userRepository;
+        this.accountRepository = accountRepository;
     }
 
     @GetMapping("/users")

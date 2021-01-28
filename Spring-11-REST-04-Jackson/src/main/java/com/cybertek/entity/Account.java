@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "account_details")
-@JsonIgnoreProperties(value={"state", "postalCode"}, ignoreUnknown = true) //this wont show state and postalCode data
+@JsonIgnoreProperties(value={"state", "postalCode","hibernateLazyInitializer"}, ignoreUnknown = true) //this wont show state and postalCode data
 public class Account extends BaseEntity {
 //    @JsonIgnore  //won't display name field
     private String name;

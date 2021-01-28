@@ -6,10 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -19,6 +16,7 @@ import java.time.LocalDate;
 @Table(name="teachers")
 public class Teacher extends BaseEntity{
 
+    @Column(columnDefinition = "DATE")
     private LocalDate birthday;
     @Enumerated(EnumType.STRING)
     private EducationLevel educationLevel;

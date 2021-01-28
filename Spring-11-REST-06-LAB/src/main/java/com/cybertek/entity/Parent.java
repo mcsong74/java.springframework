@@ -15,6 +15,7 @@ import java.time.LocalDate;
 @Table(name="parents")
 public class Parent extends BaseEntity{
 
+    @Column(columnDefinition = "DATE")
     private LocalDate birthday;
     private String email;
     private String firstName;
@@ -26,7 +27,9 @@ public class Parent extends BaseEntity{
     private Status status;
     private String username;
 
-
+    @OneToOne
+    @JoinColumn(name="addressId")
+    private Address address;
 
 
 }

@@ -23,4 +23,12 @@ public class Address extends BaseEntity{
     private String state;
     private String street;
 
+    @OneToOne
+    @JoinColumn(name="id")
+    private Parent parent;
+
+    @OneToOne
+    @JoinColumn(name="id")
+    private Student student;
+
 }

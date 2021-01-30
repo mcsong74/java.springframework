@@ -27,20 +27,30 @@ public class ApiController {
         this.teacherRepository = teacherRepository;
         this.parentRepository = parentRepository;
     }
+    //------------------ teacher ----------------------------
 
+    @GetMapping("/teachers")
+    public List<Teacher> readAllTeachers(){
+        return teacherRepository.findAll();
+    }
+
+    //------------------ address ----------------------------
     @GetMapping("/address")
-    public List<Address> getAllAddress(){
+    public List<Address> readAllAddress(){
         return addressRepository.findAll();
     }
+
+    //------------------ student ----------------------------
 
     @GetMapping("/students")
     public List<Student> readAllStudents(){
         return studentRepository.findAll();
     }
-    @GetMapping("/teachers")
-    public List<Teacher> readAllTeachers(){
-        return teacherRepository.findAll();
-    }
+
+
+
+    //------------------ parent ----------------------------
+
     @GetMapping("/parents")
     public List<Parent> readAllParents(){
         return parentRepository.findAll();

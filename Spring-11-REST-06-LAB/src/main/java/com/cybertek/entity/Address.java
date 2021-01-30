@@ -48,9 +48,11 @@ public class Address extends BaseEntity{
     private Integer currentTemperature;
 
     private Integer getCurrentTemperature(){
+        // get the temp
         return consumeTemp(this.city);
     }
     private Integer consumeTemp(String city){
+        //consme temp from 3rd part api by city and return the temperature.
         return 5;
     }
 

@@ -5,9 +5,7 @@ import com.cybertek.entity.MovieCinema;
 import com.cybertek.repository.GenreRepository;
 import com.cybertek.repository.MovieCinemaRepository;
 import com.cybertek.repository.MovieRepository;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -39,4 +37,30 @@ public class WebFluxController  {
         //retrieving only one then, Mono
         return Mono.just(movieCinemaRepository.findById(id).get());
     }
+    @GetMapping("/mono-movie-cinema")
+    public Mono<MovieCinema readMovieCinemaByIdRequestParam(@RequestParam("id") Long id){
+        return Mono.just(movieCinemaRepository.findById(id).get());
+    }
+
+    @PostMapping("/create-genre")
+    public Mono<Genre> createGenre(@RequestBody Genre genre){
+//        Genre createdGenre = genreRepository.save(genre);
+//        return Mono.just(createdGenre);
+        return Mono.just(genreRepository.save(genre));
+    }
+
+    @PutMapping("/update-genre")
+    public Mono<Genre> updateGenre(@RequestBody Genre genre){
+        Genre updatedGenre=genreRepository.save(genre);
+        return  Mono.just(updatedGenre);
+    }
+    @DeleteMapping("/delete-genre/{id}")
+    public Mono<Void> deleteGenre(@PathVariable("id") Long id){
+        genreRepository.deleteById(id);
+        return Mono.empty();
+    }
+
+
+
+
 }

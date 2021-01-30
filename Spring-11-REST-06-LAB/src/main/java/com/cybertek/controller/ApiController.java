@@ -5,6 +5,7 @@ import com.cybertek.repository.AddressRepository;
 import com.cybertek.repository.ParentRepository;
 import com.cybertek.repository.StudentRepository;
 import com.cybertek.repository.TeacherRepository;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -54,9 +55,14 @@ public class ApiController {
 
 
     //------------------ parent ----------------------------
-
     @GetMapping("/parents")
-    public List<Parent> readAllParents(){
-        return parentRepository.findAll();
+    public ResponseEntity<ResponseWrapper> readAllParents(){
+        ResponseWrapper responseWrapper= new ResponseWrapper(true, "Parensts are successfully retrieved."
+        , HttpStatus.ACCEPTED.value(), parentRepository.findAll());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseWrapper);
     }
+//    @GetMapping("/parents")
+//    public List<Parent> readAllParents(){
+//        return parentRepository.findAll();
+//    }
 }

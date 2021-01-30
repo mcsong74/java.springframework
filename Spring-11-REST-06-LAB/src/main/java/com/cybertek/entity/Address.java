@@ -53,7 +53,7 @@ public class Address extends BaseEntity{
         // get the temp
         return consumeTemp(this.city);
     }
-    private Integer consumeTemp(String city){
+    public Integer consumeTemp(String city){
         //consme temp from 3rd part api by city and return the temperature.
         RestTemplate restTemplate= new RestTemplate();
 
@@ -61,7 +61,9 @@ public class Address extends BaseEntity{
         String uri = baseUrl+city;
         Object currentWeather=restTemplate.getForObject(uri, Object.class);
         Map<String, Object> getWeather = (Map<String, Object>) currentWeather;
+
         Map<String, Object> getTemperature=(Map<String, Object>) getWeather.get("current");
+
         return Integer.parseInt(getTemperature.get("temperature").toString());
     }
 

@@ -7,10 +7,10 @@ import com.cybertek.repository.StudentRepository;
 import com.cybertek.repository.TeacherRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ApiController {
@@ -59,7 +59,16 @@ public class ApiController {
     public List<Address> readAllAddress(){
         return addressRepository.findAll();
     }
-
+    @PutMapping("/address/{id}")
+    public Address updateAdrress(@PathVariable("id") Long id, @RequestBody Address address) throws Exception {
+        Optional<Address> foundAddress = addressRepository.findById(id);
+        if (!foundAddress.isPresent()){
+            throw new Exception("Address does not exists");
+        }
+        address.setCurrentTemperature(new Address().consumeTemp(address.getCity()));
+        address.setId(foundAddress.get().getId());
+        return null;
+    }
 
 
 

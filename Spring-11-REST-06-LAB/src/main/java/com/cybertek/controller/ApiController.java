@@ -43,8 +43,17 @@ public class ApiController {
 //    public List<Student> readAllStudents(){
 //        return studentRepository.findAll();
 //    }
-
-
+//------------------ parent ----------------------------
+    @GetMapping("/parents")
+    public ResponseEntity<ResponseWrapper> readAllParents(){
+        ResponseWrapper responseWrapper= new ResponseWrapper(true, "Parents are successfully retrieved."
+                , HttpStatus.ACCEPTED.value(), parentRepository.findAll());
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseWrapper);
+    }
+    //    @GetMapping("/parents")
+    //    public List<Parent> readAllParents(){
+    //        return parentRepository.findAll();
+    //    }
     //------------------ address ----------------------------
     @GetMapping("/address")
     public List<Address> readAllAddress(){
@@ -54,15 +63,6 @@ public class ApiController {
 
 
 
-    //------------------ parent ----------------------------
-    @GetMapping("/parents")
-    public ResponseEntity<ResponseWrapper> readAllParents(){
-        ResponseWrapper responseWrapper= new ResponseWrapper(true, "Parensts are successfully retrieved."
-        , HttpStatus.ACCEPTED.value(), parentRepository.findAll());
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(responseWrapper);
-    }
-//    @GetMapping("/parents")
-//    public List<Parent> readAllParents(){
-//        return parentRepository.findAll();
-//    }
+
+
 }

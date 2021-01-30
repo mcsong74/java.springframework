@@ -96,6 +96,23 @@ public class WebFluxController  {
 
     }
 
+    @PostMapping("/create")
+    public Mono<Genre> createWebClient(@RequestBody Genre genre){
+        return webClient
+                .post()
+                .uri("/create-genre")
+                .body(Mono.just(genre), Genre.class)
+                .retrieve()
+                .bodyToMono(Genre.class);
+    }
+    @DeleteMapping("/delete/{id}")
+    public Mono<Void> deleteWebClient(@PathVariable("id") Long id){
+        return webClient
+                .delete()
+                .uri("/delete-genre/{id}", id)
+                .retrieve()
+                .bodyToMono( Void.class);
+    }
 
 
 }

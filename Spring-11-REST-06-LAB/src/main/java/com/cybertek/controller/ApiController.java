@@ -1,13 +1,11 @@
 package com.cybertek.controller;
 
-import com.cybertek.entity.Address;
-import com.cybertek.entity.Parent;
-import com.cybertek.entity.Student;
-import com.cybertek.entity.Teacher;
+import com.cybertek.entity.*;
 import com.cybertek.repository.AddressRepository;
 import com.cybertek.repository.ParentRepository;
 import com.cybertek.repository.StudentRepository;
 import com.cybertek.repository.TeacherRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,18 +32,24 @@ public class ApiController {
         return teacherRepository.findAll();
     }
 
+    //------------------ student ----------------------------
+    @GetMapping("/students")
+    public ResponseEntity<ResponseWrapper> readAllStudents(){
+        return ResponseEntity
+                .ok(new ResponseWrapper("students are successfully retrieved",studentRepository.findAll()));
+    }
+//    @GetMapping("/students")
+//    public List<Student> readAllStudents(){
+//        return studentRepository.findAll();
+//    }
+
+
     //------------------ address ----------------------------
     @GetMapping("/address")
     public List<Address> readAllAddress(){
         return addressRepository.findAll();
     }
 
-    //------------------ student ----------------------------
-
-    @GetMapping("/students")
-    public List<Student> readAllStudents(){
-        return studentRepository.findAll();
-    }
 
 
 

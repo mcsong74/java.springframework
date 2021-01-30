@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL) //if any value is null, do not display data field
+//@JsonInclude(JsonInclude.Include.NON_NULL) //if any value is null, do not display data field
 public class ResponseWrapper {
     //not a bean, customized response body
 

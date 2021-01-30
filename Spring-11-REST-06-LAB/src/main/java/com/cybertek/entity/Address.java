@@ -21,7 +21,7 @@ import java.util.Map;
 @Setter
 @Table(name="address")
 @JsonIgnoreProperties(value={"hibernateLazyInitializer", "teacher"}, ignoreUnknown = true)
-//@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Address extends BaseEntity{
     private String street;
     private String country;
@@ -49,20 +49,23 @@ public class Address extends BaseEntity{
 
     private Integer currentTemperature;
 
-    private Integer getCurrentTemperature(){
-        // get the temp
-        return consumeTemp(this.city);
-    }
+//    private Integer getCurrentTemperature(){
+//        // get the temp
+//        return consumeTemp(this.city);
+//    }
     public Integer consumeTemp(String city){
         //consme temp from 3rd part api by city and return the temperature.
-        RestTemplate restTemplate= new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
 
-        String baseUrl="http://api.weatherstack.com/current?access_key=02a009b8e3922c395677a1e85406aca6&query=";
-        String uri = baseUrl+city;
-        Object currentWeather=restTemplate.getForObject(uri, Object.class);
-        Map<String, Object> getWeather = (Map<String, Object>) currentWeather;
+        String BASE_URL = "http://api.weatherstack.com/current?access_key=02a009b8e3922c395677a1e85406aca6&query=";
 
-        Map<String, Object> getTemperature=(Map<String, Object>) getWeather.get("current");
+        String uri = BASE_URL + city;
+
+        Object currentWeather = restTemplate.getForObject(uri,Object.class);
+
+        Map<String,Object> getWeather = (Map<String,Object>) currentWeather;
+
+        Map<String,Object> getTemperature = (Map<String, Object>) getWeather.get("current");
 
         return Integer.parseInt(getTemperature.get("temperature").toString());
     }

@@ -26,7 +26,7 @@ public class Genre extends BaseEntity {
     private String name;
 
     @ManyToMany(mappedBy = "genreList")
-    @OnDelete(action = OnDeleteAction.CASCADE)
+//    @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore //above, mappedBy, so can use JasonIgnore here
     private List<Movie> movieList = new ArrayList<>();
 

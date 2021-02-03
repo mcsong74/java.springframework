@@ -17,6 +17,7 @@ import java.util.List;
 @RestController
 public class WebFluxController  {
 
+    //sets base source url for Webclient
     private WebClient webClient = WebClient.builder().baseUrl("http://localhost:8080").build();
 
     private MovieRepository movieRepository;
@@ -108,7 +109,12 @@ public class WebFluxController  {
                 .bodyToMono(Genre.class);
     }
     @DeleteMapping("/delete/{id}")
-    public Mono<Void> deleteWebClient(@PathVariable("id") Long id){
+    public Mono<Void> deleteWebClient(@PathVariable("id") Long id) throws Exception {
+        //error in relation ManToMany
+        Integer countGenre = genreRepository.countGenresNativeQuery(id);
+        if(countGenre>0){
+            throw new Exception("Genre can't be deleted, is linked by a movie");
+        }
         return webClient
                 .delete()
                 .uri("/delete-genre/{id}", id)

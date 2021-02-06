@@ -49,6 +49,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-05-RestTemplate/Spring-11-REST-05-RestTemplate.iml" filepath="$PROJECT_DIR$/Spring-11-REST-05-RestTemplate/Spring-11-REST-05-RestTemplate.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-06-LAB/Spring-11-REST-06-LAB.iml" filepath="$PROJECT_DIR$/Spring-11-REST-06-LAB/Spring-11-REST-06-LAB.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-07-OpenApi3.0/Spring-11-REST-07-OpenApi3.0.iml" filepath="$PROJECT_DIR$/Spring-11-REST-07-OpenApi3.0/Spring-11-REST-07-OpenApi3.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-07-OpenApiRedo/Spring-11-REST-07-OpenApiRedo.iml" filepath="$PROJECT_DIR$/Spring-11-REST-07-OpenApiRedo/Spring-11-REST-07-OpenApiRedo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-CinemaLab/cinemaapp.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-CinemaLab/cinemaapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-TableCreation/com.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-TableCreation/com.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-07-SpringBoot-Demo/cybertek (1).iml" filepath="$PROJECT_DIR$/Spring-07-SpringBoot-Demo/cybertek (1).iml" />
@@ -62,6 +63,7 @@
       <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-04-Jackson/jackson.iml" filepath="$PROJECT_DIR$/Spring-11-REST-04-Jackson/jackson.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-Mapping-JPQL-NamedQueries/jpql.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-Mapping-JPQL-NamedQueries/jpql.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-Mapping-ManyToMany/manytomany.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-Mapping-ManyToMany/manytomany.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring-11-REST-07-OpenApi3.0/openapi.iml" filepath="$PROJECT_DIR$/Spring-11-REST-07-OpenApi3.0/openapi.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-Mapping-OneToOne/orm2.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-Mapping-OneToOne/orm2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-Mapping-ManyToOne/orm3.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-Mapping-ManyToOne/orm3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Spring-09-ORM-OneToMany/ormonetomany.iml" filepath="$PROJECT_DIR$/Spring-09-ORM-OneToMany/ormonetomany.iml" />
